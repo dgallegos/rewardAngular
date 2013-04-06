@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
 <head>
+
   <meta charset="utf-8">
   <title>rewardrobe - The Lion, The Witch, and rewardrobe.</title>
   <meta name="description" content="Social fashion">
@@ -16,22 +17,6 @@
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="js/jquery.isotope.min.js"></script>
-
-    <script>
-        var $container = $('#container');
-        // initialize isotope
-        $container.isotope({
-            layoutMode: 'fitRows',
-        });
-
-        // filter items when filter link is clicked
-        $('#filters a').click(function(){
-            var selector = $(this).attr('data-filter');
-            $container.isotope({ filter: selector });
-            return false;
-        });
-    </script>
 
 </head>
 <body ng-controller="RewardCtrl"  class="page home-page">
@@ -54,8 +39,16 @@
         </div>
 
       </section>
+      <!-- End Breadcrumbs -->
 
-      <!-- <div ng-include src="'/partials/featured.html'"></div> -->
+      <!-- Begin Login Form -->
+        <form action="" class="login-form">
+          <input type="text" placeholder="Username">
+          <input type="password" placeholder="Password">
+        </form>
+      <!-- End Login Form -->
+
+      <a href="">Forgot Password?</a> | <a href="">Register</a>
 
     </div>
     <!-- End #main -->
