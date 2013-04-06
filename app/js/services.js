@@ -13,8 +13,7 @@ angular.module('rewardStyleServices', ['ngResource']).
     RewardService.getFavorites = {
       async: function(token) {
         var controller = 'favorites';
-        var tokenQuery = 'token='+token;
-        var favoritesRequest = '/'+controller+'?'+tokenQuery;
+        var favoritesRequest = '/'+controller;
 
         // $http returns a promise, which has a then function, which also returns a promise
         var promise = $http.get(favoritesRequest).then(function (response) {
