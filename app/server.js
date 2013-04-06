@@ -78,10 +78,13 @@ app.configure(function() {
   app.use(express.static(__dirname + '/'));
 });
 
-app.get('/', ensureAuthenticated, function (request, response){
+app.get('/', function (request, response){
     response.render('index.html');
 })
 
+app.get('/authtest', function(request, response){
+    response.render('index.html');
+})
 
 
 app.get('/json', ensureAuthenticated, function (request, response) {
