@@ -13,7 +13,7 @@ angular.module('rewardStyleServices', ['ngResource']).
     RewardService.getFavorites = {
       async: function() {
         // $http returns a promise, which has a then function, which also returns a promise
-        var promise = $http.get('/favorites').then(function (response) {
+        var promise = $http.get('/json').then(function (response) {
           // The then function here is an opportunity to modify the response
           console.log(response);
           // The return value gets picked up by the then in the controller.
@@ -24,7 +24,11 @@ angular.module('rewardStyleServices', ['ngResource']).
       }
     };
 
+    RewardService.favorites = {
+      async: function() {
 
+      }
+    };
     return RewardService;
   });
 

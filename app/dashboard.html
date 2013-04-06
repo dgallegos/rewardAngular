@@ -28,16 +28,9 @@
       <div ng-include src="'/partials/header.html'"></div>
       <!-- End Include Header -->
 
-      <!-- Begin Breadcrumbs -->
-      <section class="breadcrumbs">
-
-        <div class="wrap">
-
-          <a href="/rewardrobe/">Home</a> /
-
-        </div>
-
-      </section>
+      <div class="products" ng-repeat="product in favorites.products">
+        {{product.product_name}}
+      </div>
 
     </div>
     <!-- End #main -->
