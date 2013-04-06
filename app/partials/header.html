@@ -8,7 +8,26 @@
       </a>
     </div>
 
-    <nav id="navigation" class="site-nav">
-    </nav>
+    <section class="header-right">
+
+    	<!-- Include Admin Bar -->
+    		<section class="user-admin">
+    			<ul>
+    				<li>Login</li>
+    				<li>Register</li>
+    			</ul>
+
+    			<div class="clear"></div>
+    		</section>
+    	<!-- End Include Admin Bar -->
+
+		<!-- Include Header -->
+    		<nav ng-include src="'/partials/navigation.html'" class="site-nav"></nav>
+    	<!-- End Include Header -->
+
+    	<div class="clear"></div>
+
+    </section>
+    <!-- End .header-right -->
 
 </header>

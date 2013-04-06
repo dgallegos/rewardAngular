@@ -15,6 +15,11 @@
  *
  */
 
+
+/* Imports
+------------------------------------------------------------ */
+ @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
 /* Resets
 ------------------------------------------------------------ */
 html, body, div, span, object, iframe,
@@ -110,6 +115,10 @@ input, select {
 
 /* Global
 ------------------------------------------------------------ */
+html {
+    font-size: 16px;
+}
+
 html, body {
     height: 100%;
 }
@@ -137,12 +146,16 @@ body:before {
     width: 980px;
 }
 
+.clear {
+    clear: both;
+}
+
 /* Header
 ------------------------------------------------------------ */
 .site-header {
     background: #fff;
     border-top: 2px solid #289860;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
     height: 100px;
     position: relative;
     z-index: 9999;
@@ -154,6 +167,57 @@ body:before {
     height: 100px;
     width: 140px;
 }
+
+/* Header Right
+------------------------------------------------------------ */
+.header-right {
+    width: 800px;
+    float: right;
+}
+
+.user-admin {
+    height: 27px;
+    margin-top: 15px;
+    border-bottom: 1px solid #eaeaea;
+    width: 100%;
+}
+
+.user-admin ul {
+    float: right;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.user-admin li {
+    float: left;
+    list-style: none;
+    margin: 0 0.75rem;
+}
+
+/* Navigation
+------------------------------------------------------------ */
+.site-nav {
+    margin-top: 18px;
+}
+
+.site-nav ul {
+    float: right;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.site-nav li {
+    float: left;
+    margin: 0 0.75rem;
+}
+
+.site-nav li a {
+    color: #999;
+    text-decoration: none;
+}
+
 
 /* Breadcrumbs
 ------------------------------------------------------------ */
@@ -172,7 +236,3 @@ body:before {
     margin-top: -200px;
     position: relative;
 }
-
-
-
-
