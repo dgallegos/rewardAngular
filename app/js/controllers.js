@@ -24,23 +24,21 @@ function RewardCtrl($scope,RewardService)
   }
 */
 
-
-  $scope.allFavorites = function()
-  {
-    for(var publisher in $scope.publishers)
-    {
-      $scope.getFavorites($scope.publishers[publisher].token);
-    }
-  }
-
   $scope.getFavorites = function(token)
   {
       RewardService.getFavorites.async(token).then(function(returnJson) {
       // Assign return data to Client Object
-      $scope.favorites += returnJson;
+      $scope.favorites = returnJson;
     });
 
   }
-  $scope.allFavorites();
+ // $scope.getFavorites();
 
+}
+
+function FeaturedCtrl($scope,RewardService)
+{
+      RewardService.getFeatured.async().then(function(returnJson) {
+        $scope.featured = returnJson;
+      });
 }
