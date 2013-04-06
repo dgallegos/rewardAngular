@@ -11,7 +11,7 @@ function RewardCtrl($scope,RewardService)
                         {name:"David Gallegos",token:"b90afc2290d9e37d432fa6b4e4dea0d0"}];
 
 
-  $scope.getFavorites = function(token)
+  /*$scope.getFavorites = function(token)
   {
       var url = 'https://localhost:8000/favorites?oauth_token='+token;
 
@@ -22,12 +22,25 @@ function RewardCtrl($scope,RewardService)
         });
       });
   }
+*/
 
 
-  RewardService.getFavorites.async().then(function(returnJson) {
+  $scope.allFavorites = function()
+  {
+    for(var publisher in $scope.publishers)
+    {
+      $scope.getFavorites($scope.publishers[publisher].token);
+    }
+  }
+
+  $scope.getFavorites = function(token)
+  {
+      RewardService.getFavorites.async(token).then(function(returnJson) {
       // Assign return data to Client Object
-      $scope.favorites = returnJson;
+      $scope.favorites += returnJson;
     });
 
+  }
+  $scope.allFavorites();
 
 }

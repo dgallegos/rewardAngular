@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>rewardrobe - The Lion, The Witch, and rewardrobe.</title>
+  <meta name="description" content="Social fashion">
+  <meta name="author" content="rewardStyle">
+
+  <link rel="stylesheet" href="css/app.css"/>
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+</head>
+<body ng-controller="RewardCtrl"  class="page home-page">
+
+  <div id="page">
+
+    <div id="main">
+
+      <!-- Include Header -->
+      <div ng-include src="'/partials/header.html'"></div>
+      <!-- End Include Header -->
+
+      <div class="products" ng-repeat="product in favorites.products">
+        {{product.product_name}}
+      </div>
+
+    </div>
+    <!-- End #main -->
+
+  </div>
+  <!-- End #page -->
+
+
+  <div ng-include src="'/partials/footer.html'"></div>
+
+</body>
+</html>
