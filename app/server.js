@@ -1,7 +1,4 @@
-﻿var util = require('util'),
-    connect = require('connect'),
-    port = 8000;
-
+﻿
 var express = require('express');
 var http = require('https');
 var options = {
@@ -11,29 +8,41 @@ var options = {
 var app = express();
 
 
-app.get('/', function(request, response) {
+app.get('/json', function(request, response) {
  // response.sendfile(__dirname + "/index.html");
 
 	http.get(options, function(res) {
 	  
 	  res.setEncoding('utf8');
+	  
+	  var data = ''
 
 	  res.on('data', function (chunk) {
-	    console.log('BODY: ' + chunk);
-	    response.json(chunk);
+	   // console.log('BODY: ' + chunk);
+	    // response.json(chunk);
+	    data += chunk;
+	    console.log(chunk);
+
 	  });
 
+    res.on('end',function(){
+        var obj = JSON.parse(data);
+        response.json( obj );
+    })
 
 
-	}).on('error', function(e) {
-	  console.log('ERROR: ' + e.message);
+
+	// }).on('error', function(e) {
+	//   console.log('ERROR: ' + e.message);
+	// });
+
 	});
 
 });
 
+app.configure(function(){
+  app.use('/', express.static(__dirname));
+ 
+});
 
-app.listen(8080);
-
-connect.createServer(connect.static(__dirname)).listen(port);
-util.puts('Listening on ' + port + '...');
-util.puts('Press CTRL + C to stop the web server');
+app.listen(8000);
