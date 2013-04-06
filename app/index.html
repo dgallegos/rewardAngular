@@ -16,6 +16,22 @@
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="js/jquery.isotope.min.js"></script>
+
+    <script>
+        var $container = $('#container');
+        // initialize isotope
+        $container.isotope({
+            layoutMode: 'fitRows',
+        });
+
+        // filter items when filter link is clicked
+        $('#filters a').click(function(){
+            var selector = $(this).attr('data-filter');
+            $container.isotope({ filter: selector });
+            return false;
+        });
+    </script>
 
 </head>
 <body ng-controller="RewardCtrl"  class="page home-page">

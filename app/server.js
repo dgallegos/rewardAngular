@@ -3,7 +3,7 @@ var express = require('express');
 var http = require('https');
 var options = {
   host: 'api.rewardstyle.com',
-  path: '/v1/search?oauth_token=325c1cd5606244517254b720e21258c8&keywords=&priceMin=1&priceMax=1000',
+  path: '/v1/search?oauth_token=325c1cd5606244517254b720e21258c8&keywords=&priceMin=1&priceMax=1000&limit=40',
 };
 var app = express();
 

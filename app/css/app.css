@@ -1,7 +1,7 @@
 /*
     Site Name: Rewardrobe
     Description: rewardStyle Hackathon 2013
-    Authors: Jon Bellah, Gabe Marshall, David, Brenna Schell
+    Authors: Jon Bellah, Gabe Marshall, David Gallegos, Brenna Schell
 
     Version: 1.0.0
 
@@ -9,9 +9,14 @@
 
 /* Table of Contents
  *
+ * Imports
  * Resets
  * Global
  * Header
+ * Header Right
+ * Navigation
+ * Breadcrumbs
+ * Footer
  *
  */
 
@@ -235,4 +240,112 @@ body:before {
     height: 200px;
     margin-top: -200px;
     position: relative;
+}
+
+/* Isotope
+------------------------------------------------------------ */
+#container img {
+    width:275px;
+    height:220px;
+}
+
+.portfolio {
+    margin: 32px 0 0;
+    margin: 2rem 0 2.5rem;
+}
+
+#container {
+    clear: both;
+}
+
+.portfolio-filters {
+    margin: 32px 0 0;
+    margin: 2rem 0 0;
+    text-align: center;
+}
+
+ul#filters {
+    border: 0;
+    list-style: none;
+    margin: 0;
+}
+
+ul#filters li {
+    display: inline;
+    margin: 0 -1px;
+}
+
+ul#filters li:nth-child(1) {
+    margin: 0 -4px;
+}
+
+ul#filters li a {
+    background: #2d3538;
+    border: 0;
+    color: #fff;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    padding: 0.6rem 1.1rem;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+ul#filters li a:hover {
+    background: #77cc6d;
+}
+
+.isotope-item {
+    z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+.isotope-item {
+    z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
 }
