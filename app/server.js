@@ -92,7 +92,7 @@ app.get('/json', function (request, response) {
     // Grab request parameters to perform search
 
     var userSearchTerms = request.query['searchterms'];
-    console.log(userSearchTerms);
+    
 
     var options = {
         host: 'api.rewardstyle.com',
