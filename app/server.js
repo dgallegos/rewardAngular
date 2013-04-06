@@ -48,7 +48,6 @@ passport.use(new TwitterStrategy({
 
 /* End of Authentication */
 
-console.log(typeof bloggerTokens);
 
 var options = {
   host: 'api.rewardstyle.com',
