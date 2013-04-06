@@ -3,10 +3,14 @@
 /* Controllers */
 
 
-function MyCtrl1() {}
-MyCtrl1.$inject = [];
 
+function RewardCtrl($scope,RewardService)
+{
+  $scope.hello = "Hello World";
 
-function MyCtrl2() {
+  RewardService.getFavorites.async().then(function(returnJson) {
+      // Assign return data to Client Object
+      $scope.favorites = returnJson;
+    });
+
 }
-MyCtrl2.$inject = [];
