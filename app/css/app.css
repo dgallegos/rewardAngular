@@ -24,6 +24,8 @@
 /* Imports
 ------------------------------------------------------------ */
  @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+ @import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+ @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
 
 /* Resets
 ------------------------------------------------------------ */
@@ -259,13 +261,55 @@ body:before {
     position: relative;
 }
 
-.footer-widgets .widget {
-    width: 33%;
+.footer-widget-1 {
     float: left;
+    width: 300px;
+}
+
+.footer-widget-1 input[type=email] {
+    width: 100%;
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.02);
+    float:left;
+}
+
+.footer-widget-1 input[type=submit] {
+    background: #289860;
+    border: 1px solid #337252;
+    color: #fff;
+    float: right;
+    font-family: 'lato';
+    font-size: 0.95rem;
+    font-weight: 300;
+    padding: 7px 14px;
+    width: 75px;
+}
+
+.footer-widget-2 {
+    float: left;
+    width: 300px;
+    margin: 0 40px;
+}
+
+.footer-widget-3 {
+    float: left;
+    width: 300px;
 }
 
 .footer-widgets {
-    height: 215px;
+    height: 175px;
+    margin-top: 40px;
+    max-height: 175px;
+}
+
+.footer-widgets h3 {
+    border-bottom: 1px solid #eaeaea;
+    color: #555;
+    font-family: 'Droid Serif', serif;
+    font-size: 1.15rem;
+    margin: 0 0 1.5rem;
 }
 
 .footer-creds {
@@ -273,7 +317,61 @@ body:before {
     background: #333;
     color: #fff;
     height: 35px;
+}
 
+/* Share Links
+------------------------------------------------------------ */
+ul.social {
+    margin: 1.25rem auto 0;  
+    float: left;
+    list-style: none;
+}
+
+ul.social li {
+    display: inline;
+    float: left;
+    margin-left: 0.5rem;
+}
+
+ul.social li a {
+    background:url(../images/social-sprite.png);
+    float: left;
+    height: 30px;
+    margin: 0;
+    text-indent: -9999px;
+    width: 30px;
+    opacity: 0.75;
+    transition: none;
+    -o-transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+}
+
+ul.social li.facebook a {
+    background-position: 0 0px;
+}
+
+ul.social li.facebook a:hover {
+    background-position: 0 -31px;
+    opacity: 1;
+}
+
+ul.social li.twitter a {
+    background-position: 0 -62px;
+}
+
+ul.social li.twitter a:hover {
+    background-position: 0 -93px;
+    opacity: 1;
+}
+
+ul.social li.rss a {
+    background-position: 0 -124px;
+}
+
+ul.social li.rss a:hover {
+    background-position: 0 -155px;
+    opacity: 1;
 }
 
 /* Isotope
