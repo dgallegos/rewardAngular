@@ -38,7 +38,14 @@ function RewardCtrl($scope,RewardService)
 
 function FeaturedCtrl($scope,RewardService)
 {
-      RewardService.getFeatured.async().then(function(returnJson) {
-        $scope.featured = returnJson;
-      });
+  $scope.featured = {};
+  $scope.featured.products = [];
+
+  $scope.update = function () {
+    RewardService.getFeatured.async().then(function(returnJson) {
+      $scope.featured = returnJson;
+    });
+  }
+
+  $scope.update();
 }

@@ -1,5 +1,9 @@
-<div id="container" class="featured" ng-controller="FeaturedCtrl">
+<!-- div id="container" class="featured" ng-controller="FeaturedCtrl">
 	<div ng-repeat="product in featured.products" class="item">
 		<img src="{{product.product_image}}">
 	</div>
+</div -->
+
+<div id="items" ng-controller="FeaturedCtrl">
+    <section class="container" data-iso-repeat="featured.products"></section>
 </div>
