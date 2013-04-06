@@ -1,15 +1,14 @@
 ﻿var express = require('express');
 var http = require('https');
-<<<<<<< HEAD
 var Firebase = require('firebase');
 var async = require('async');
 
-=======
+
 var options = {
   host: 'api.rewardstyle.com',
   path: '/v1/search?oauth_token=325c1cd5606244517254b720e21258c8&keywords=&priceMin=1&priceMax=1000&limit=40',
 };
->>>>>>> 3e6753033c84c0a70cf4e777f45ef5c609d991d1
+
 var app = express();
 
 app.configure(function () {
