@@ -78,16 +78,16 @@ app.configure(function() {
   app.use(express.static(__dirname + '/'));
 });
 
-app.get('/', function (request, response){
-    response.render('index.html');
-})
+// app.get('/', function (request, response){
+//     response.render('index.html');
+// })
 
 app.get('/authtest', function(request, response){
     response.render('index.html');
 })
 
 
-app.get('/json', ensureAuthenticated, function (request, response) {
+app.get('/json', function (request, response) {
 
     // Grab request parameters to perform search
 

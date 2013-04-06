@@ -1,0 +1,26 @@
+{
+  "name": "rewardrobe",
+  "subdomain": "rewardrobe",
+  "scripts": {
+    "start": "./app/server.js"
+  },
+  "version": "0.0.1-7",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "dependencies": {
+    "connect": "*",
+    "express": "*",
+    "async": "0.2.x",
+    "passport": "*",
+    "firebase": "0.5.x",
+    "passport-twitter": "0.1.x"
+  },
+  "bundledDependencies": [
+    "connect"
+  ],
+  "env": {
+    "npm_config_rebuild_bundle": true,
+    "npm_config_production": true
+  }
+}
