@@ -14,7 +14,7 @@ app.directive('isoRepeat', function ($timeout) {
         template:'<div>' +
         '<article class="crop" style="background:url({{product.product_image}}) no-repeat;" ng-repeat="product in products">' +
         '<a href="#" class="{{product.product_id}}" ng-click="innerFoo()">'+
-        // '<img src={{product.product_image}}>' +
+        '<img style="opacity:0;" src={{product.product_image}}>' +
         '</a>' +
         '</article></div>',
 
