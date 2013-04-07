@@ -106,6 +106,10 @@ app.get('/feed', function(request, response){
     response.render('feed');
 })
 
+app.get('/wardrobe', function(request, response){
+    response.render('wardrobe');
+})
+
 app.get('/index', function (request, response) {
     response.render('index', {
         locals: {
@@ -122,35 +126,15 @@ app.get('/login', function (request, response) {
 app.post('/basicauth', function (request, response) {
     // var userName = request.query['user'];
     // var userPassword = request.query['pass'];
-    if (request.body.userEmail) {
-
-// var userEmailVar = request.body.userEmail;
-// var message = JSON.stringify({name: "David Gallegos", token: "b90afc2290d9e37d432fa6b4e4dea0d0"});
-
-// client.set("user1", {title:"gabe", message: "hello" });
-
-// client.get("user1", function(err, reply){
-// console.log(JSON.parse(reply));
+var newUser = {name: "David Gallegos", id: "davidgallegos"};
+// client.lpush("Users", newUser, function(err, reply){
+//   // client.ltrim("messages", 0, 1);
+//   console.log(reply);
 // });
 
-
-
-
-        // client.lrange("users", 0, -1, function (err, users) {
-        //     console.log(users);
-        //     if (users === null) {
-        //       console.log('user did not exist so lets create one');
-        //         client.lpush("users", message, function(err, reply){
-        //           console.log(reply);
-        //         })
-        //     } else {
-        //       console.log('user already created');
-
-        //     }
-        // });
-
-        //client.set(request.body.userEmail)
-    }
+client.lrange("Users", 0, -1, function(err, messages){
+  console.log(messages)
+})
 
 // probably could be deleted
     var userName = request.body.user;
