@@ -6,5 +6,6 @@ angular.module('myApp', ['myApp.filters', 'rewardStyleServices', 'rsDirectives']
  .config(['$routeProvider', function($routeProvider) {
       $routeProvider.
           when('/', {templateUrl: 'partials/featured.html', controller: 'FeaturedCtrl'}).
-      otherwise({redirectTo: '/phones'});
+          when('/favorites', {templateUrl: 'partials/featured.html', controller: 'FeaturedCtrl'}).
+      otherwise({redirectTo: '/'});
   }]);

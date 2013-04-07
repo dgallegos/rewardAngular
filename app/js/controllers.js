@@ -36,7 +36,7 @@ function RewardCtrl($scope,$routeParams,RewardService)
 
 }
 
-function FeaturedCtrl($scope,RewardService)
+function FeaturedCtrl($scope,$route,RewardService)
 {
   $scope.featured = {};
   $scope.featured.products = [];

@@ -9,12 +9,25 @@
             <h4>{{modalProduct.product_name}}</h4>
         </div>
         <div class="modal-body">
-           {{modalProduct.price}}
            <img src="{{modalProduct.product_image}}">
+
+           <div class="product-details">
+              <section class="product-price">
+                Price: {{modalProduct.price}}
+              </section>
+
+              <section class="product-designer">
+                Designer: {{modalProduct.designer}}
+              </section>
+            </div>
         </div>
     </div>
   <div id="items">
     <section class="container" data-iso-repeat="featured.products" click="openModal()"></section>
   </div>
 </div>
-
+<script>
+$(window).load(function(){
+  setTimeout(function(){$('.container').isotope('reLayout');},1500);
+})
+</script>

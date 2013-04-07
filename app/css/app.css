@@ -132,6 +132,11 @@ input, select {
     vertical-align:middle;
 }
 
+::selection {
+    background: #0F714B;
+    color: #fff;
+}
+
 /* Global
 ------------------------------------------------------------ */
 * {
@@ -164,7 +169,7 @@ body:before {
 
 #main {
     overflow: auto;
-    padding-bottom: 250px;
+    padding-bottom: 300px;
 }
 
 .wrap {
@@ -184,7 +189,7 @@ body:before {
     box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
     height: 100px;
     position: relative;
-    z-index: 9999;
+    z-index: 99;
 }
 
 .logo {
@@ -233,8 +238,8 @@ body:before {
 
 .site-nav ul {
     float: right;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.2rem;
+    font-family: 'Droid Serif', serif;
+    font-size: 1.1rem;
     font-weight: 300;
 }
 
@@ -267,17 +272,39 @@ body:before {
     text-decoration: none;
 }
 
+/* Content
+------------------------------------------------------------ */
+.content {
+    width: 720px;
+    float: left;
+}
+
+.content img {
+    max-width: 680px;
+}
+
+/* Sidebar
+------------------------------------------------------------ */
+.sidebar {
+    width: 260px;
+    float: right;
+}
+
 /* Footer
 ------------------------------------------------------------ */
 .site-footer {
     background: #f4f4f4;
     border-top: 1px solid #eaeaea;
     clear: both;
-    height: 250px;
+    height: 300px;
     font-family: 'Lato';
     font-weight: 300;
-    margin-top: -250px;
+    margin-top: -300px;
     position: relative;
+}
+
+.site-footer ul {
+    margin: 0;
 }
 
 .footer-widget-1 {
@@ -289,7 +316,7 @@ body:before {
     width: 100%;
     border: 1px solid #ddd;
     border-radius: 3px;
-    padding: 10px;
+    padding: 18px 13px;
     box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.02);
     float:left;
 }
@@ -323,14 +350,14 @@ body:before {
     float: left;
 }
 
-.footer-widget-4 a {
+.footer-widget-4 a:hover {
     text-decoration: none;
 }
 
 .footer-widgets {
-    height: 175px;
+    height: 225px;
     margin-top: 40px;
-    max-height: 175px;
+    max-height: 225px;
 }
 
 .footer-widgets h3 {
@@ -338,12 +365,12 @@ body:before {
     color: #555;
     font-family: 'Droid Serif', serif;
     font-size: 1.15rem;
-    padding: 0 0 0.75rem;
+    padding: 0 0 0.25rem;
     margin: 0 0 0.8rem;
 }
 
 .footer-widget-4 h3 {
-    margin: 0;
+    margin: 0 0 1.2rem;
 }
 
 .footer-widgets .widget li {
@@ -367,61 +394,6 @@ body:before {
     width: 50%;
 }
 
-/* Share Links
------------------------------------------------------------- */
-ul.social {
-    margin: 1.25rem auto 0;  
-    float: left;
-    list-style: none;
-}
-
-ul.social li {
-    display: inline;
-    float: left;
-    margin-left: 0.5rem;
-}
-
-ul.social li a {
-    background:url(../images/social-sprite.png);
-    float: left;
-    height: 30px;
-    margin: 0;
-    text-indent: -9999px;
-    width: 30px;
-    opacity: 0.75;
-    transition: none;
-    -o-transition: none;
-    -moz-transition: none;
-    -webkit-transition: none;
-}
-
-ul.social li.facebook a {
-    background-position: 0 0px;
-}
-
-ul.social li.facebook a:hover {
-    background-position: 0 -31px;
-    opacity: 1;
-}
-
-ul.social li.twitter a {
-    background-position: 0 -62px;
-}
-
-ul.social li.twitter a:hover {
-    background-position: 0 -93px;
-    opacity: 1;
-}
-
-ul.social li.rss a {
-    background-position: 0 -124px;
-}
-
-ul.social li.rss a:hover {
-    background-position: 0 -155px;
-    opacity: 1;
-}
-
 /* Icons
 ------------------------------------------------------------ */
 .icon {
@@ -431,23 +403,51 @@ ul.social li.rss a:hover {
     transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
+    text-decoration: none;
     -webkit-transition: all 0.2s linear;
 }
 
 .icon.facebook:hover {
-    color: blue;
+    color: #3b5998;
 }
 
 .icon.twitter:hover {
-    color: lightBlue;
+    color: #00bdf5;
 }
 
 .icon.pinterest:hover {
-    color: red;
+    color: #cc2328;
 }
 
 .icon.tumblr:hover {
-    color: blue;
+    color: #375570;
+}
+
+/* Modal
+------------------------------------------------------------ */
+.modal {
+    top: 10%;
+}
+
+.modal-header {
+    background: #0F714B;
+    border-bottom: 1px solid #1E5540;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-family: 'Droid Serif', serif;
+    padding: 20px;
+}
+
+.modal-body img {
+    max-width: 50%;
+    height: auto;
+}
+
+.product-details {
+    float: right;
+    width: 49%;
 }
 
 /* Isotope
@@ -458,6 +458,10 @@ ul.social li.rss a:hover {
 
 .container {
     margin-bottom: 3rem;
+}
+
+.container img {
+    max-width: 680px;
 }
 
 ul#filters {
@@ -497,6 +501,7 @@ ul#filters li a:hover {
     border: 1px solid #eaeaea;
     margin: 10px;
     padding: 10px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.05);
     z-index: 2;
 }
 
