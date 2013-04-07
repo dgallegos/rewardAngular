@@ -4,7 +4,7 @@
   "scripts": {
     "start": "./app/server.js"
   },
-  "version": "0.0.1-10",
+  "version": "0.0.1-16",
   "engines": {
     "node": "0.8.x"
   },
@@ -14,7 +14,8 @@
     "async": "0.2.x",
     "passport": "*",
     "firebase": "0.5.x",
-    "passport-twitter": "0.1.x"
+    "passport-twitter": "0.1.x",
+    "passport-http": "0.2.x"
   },
   "bundledDependencies": [
     "connect"
