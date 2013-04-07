@@ -23,7 +23,7 @@
 //     location.reload(forceGet);
 
 // })
-sessionStorage.user = 'undefined';
+localStorage.user = 'undefined';
 
 var chatRef = new Firebase('https://rewardrobe.firebaseIO.com');
 var authClient = new FirebaseAuthClient(chatRef, function(error, user) {

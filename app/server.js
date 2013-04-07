@@ -87,6 +87,10 @@ app.get('/logout', function(request, response){
     response.render('logout');
 });
 
+app.get('/index', function(request, response){
+   response.render('index', {locals: {errorMessage: "error!!"}});
+});
+
 
 app.post('/basicauth', function(request, response){
     // var userName = request.query['user'];

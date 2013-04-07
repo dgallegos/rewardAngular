@@ -31,8 +31,8 @@
     <!-- End .header-right -->
 <script>
   $(document).ready(function(){
-    if(sessionStorage.user != 'undefined'){
-    $('.user-admin li:eq(0)').text(sessionStorage.user);
+    if(localStorage.user != 'undefined'){
+    $('.user-admin li:eq(0)').text(localStorage.user);
     $('.user-admin li:eq(1)').html('<a href="/logout">Logout</a>');
     }
   })
