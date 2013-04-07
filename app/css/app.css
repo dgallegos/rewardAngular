@@ -174,7 +174,7 @@ body:before {
 
 .wrap {
     margin: 0 auto;
-    width: 1180px;
+    width: 980px;
 }
 
 .clear {
@@ -202,7 +202,7 @@ body:before {
 /* Header Right
 ------------------------------------------------------------ */
 .header-right {
-    width: 1000px;
+    width: 800px;
     float: right;
 }
 
@@ -275,29 +275,19 @@ body:before {
 /* Content
 ------------------------------------------------------------ */
 .content {
-    width: 960px;
-    float: right;
+    width: 720px;
+    float: left;
 }
 
+.content img {
+    max-width: 680px;
+}
 
 /* Sidebar
 ------------------------------------------------------------ */
 .sidebar {
-    width: 200px;
-    float: left;
-}
-
-.sidebar-widget {
-    margin: 0 0 1.5rem;
-}
-
-.sidebar-widget h3 {
-    font-family: 'Droid Serif', serif;
-    font-size: 1rem;
-    color: #777;
-    border-bottom: 1px solid #eaeaea;
-    padding: 0;
-    margin: 0 0 0.75rem;
+    width: 260px;
+    float: right;
 }
 
 /* Footer
@@ -319,7 +309,7 @@ body:before {
 
 .footer-widget-1 {
     float: left;
-    width: 400px;
+    width: 300px;
 }
 
 .footer-widget-1 input[type=email] {
@@ -345,18 +335,18 @@ body:before {
 
 .footer-widget-2 {
     float: left;
-    width: 215px;
+    width: 185px;
     margin: 0 40px;
 }
 
 .footer-widget-3 {
     float: left;
-    width: 215px;
+    width: 185px;
     margin: 0 40px 0 0;
 }
 
 .footer-widget-4 {
-    width: 215px;
+    width: 185px;
     float: left;
 }
 
@@ -460,12 +450,6 @@ body:before {
     width: 49%;
 }
 
-.crop {
-    width: 300px;
-    height: 300px;
-    background-position: -50px -60px fixed;
-}
-
 /* Isotope
 ------------------------------------------------------------ */
 #container {
@@ -474,13 +458,11 @@ body:before {
 
 .container {
     margin-bottom: 3rem;
-    width: 960px;
 }
 
 .container img {
     max-width: 680px;
 }
-
 
 ul#filters {
     border: 0;
@@ -566,15 +548,6 @@ ul#filters li a:hover {
 .isotope-item {
     z-index: 2;
 }
-
-.isotope-item:hover {
-    transition: all 0.25s linear;
-    -webkit-transition: all 0.25s linear;
-    width: 320px;
-    height: 320px;
-    margin: 0;
-}
-
 
 .isotope-hidden.isotope-item {
     pointer-events: none;
