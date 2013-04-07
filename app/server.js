@@ -120,12 +120,33 @@ app.post('/basicauth', function (request, response) {
     // var userPassword = request.query['pass'];
     if (request.body.userEmail) {
 
-        client.get("message1", function (err, reply) {
-            console.log(reply);
-            if (reply === null) {
-                console.log('testing');
-            }
-        });
+// var userEmailVar = request.body.userEmail;
+// var message = JSON.stringify({name: "David Gallegos", token: "b90afc2290d9e37d432fa6b4e4dea0d0"});
+
+// client.set("user1", {title:""});
+  // client.lpush("blogger", message, function(err, reply){
+  //   console.log(reply);
+  // });
+
+  // client.lrange("blogger", 0, -1, function(err, messages){
+  //   var testMessage = JSON.parse(messages)
+  //   console.log(testMessage);
+  // })
+
+
+
+        // client.lrange("users", 0, -1, function (err, users) {
+        //     console.log(users);
+        //     if (users === null) {
+        //       console.log('user did not exist so lets create one');
+        //         client.lpush("users", message, function(err, reply){
+        //           console.log(reply);
+        //         })
+        //     } else {
+        //       console.log('user already created');
+
+        //     }
+        // });
 
         //client.set(request.body.userEmail)
     }
@@ -134,10 +155,10 @@ app.post('/basicauth', function (request, response) {
     var userName = request.body.user;
     var userPassword = request.body.password;
     console.log(userPassword);
-    
+
 })
 
-app.get('/json', function (request, response) {
+app.get('/json/featured', function (request, response) {
 
     // Grab request parameters to perform search
 
@@ -174,7 +195,7 @@ app.get('/json', function (request, response) {
 
 // favorites search
 
-app.get('/favorites', function (request, response) {
+app.get('/json/favorites', function (request, response) {
 
     // if (request.isAuthenticated())
 
