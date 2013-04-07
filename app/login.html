@@ -67,7 +67,6 @@ var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
   } else if (user) {
     // user authenticated with Firebase
     $('#form_login').hide();
-    alert('Successfully authenticated');
     sessionStorage.user = user.email;
     window.location = "/";
 

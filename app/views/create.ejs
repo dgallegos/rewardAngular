@@ -1,14 +1,17 @@
 <script src='https://cdn.firebase.com/v0/firebase.js'></script>
 <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-<h1>Register</h1>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<h4>Register</h4>
     <input type='text' id='nameInput' placeholder='email'>
+    <br>
     <input type='text' id='messageInput' placeholder='password'>
+    <br>
     <button id="submit">Register</button>
     <br>
     <br>
-    <ul id="users">
-    </ul>
+    <div id="users">
+    </div>
 <script>
 // var myDataRef = new Firebase('https://rewardrobe.firebaseio.com/');
 // var bloggerArray = [];
@@ -53,7 +56,9 @@ $('#submit').click(function(){
 
  authClient.createUser(nameVar, tokenVar, function(error, user) {
   if (!error) {
-    console.log('User Id: ' + user.id + ', Email: ' + user.email);
+    $('#users').text('Account created!')
+    $('#nameInput').val('');
+    $('#messageInput').val('');
   }
 });
 

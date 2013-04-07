@@ -13,10 +13,11 @@ app.directive('isoRepeat', function ($timeout) {
         },
         template:'<div>' +
         '<article ng-repeat="product in products">' +
-        '<a href="#?pid={{product.product_id}}" ng-click="innerFoo()">'+
+        '<a href="#" class="{{product.product_id}}" ng-click="innerFoo()">'+
         '<img src={{product.product_image}}>' +
         '</a>' +
         '</article></div>',
+
         link: function (scope, element, attrs) {
 
             var options = {

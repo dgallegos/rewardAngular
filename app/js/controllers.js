@@ -26,7 +26,7 @@ function RewardCtrl($scope,$routeParams,RewardService)
 
   $scope.getFavorites = function(token)
   {
-      RewardService.getFavorites.async(token).then(function(returnJson) {
+      RewardService.getFeatured.async(token).then(function(returnJson) {
       // Assign return data to Client Object
       $scope.favorites = returnJson;
     });
@@ -36,20 +36,30 @@ function RewardCtrl($scope,$routeParams,RewardService)
 
 }
 
-function FeaturedCtrl($scope,$routeParams,$route,RewardService)
+function FeaturedCtrl($scope,RewardService)
 {
   $scope.featured = {};
   $scope.featured.products = [];
 
-  $scope.modalProduct;
-
   $scope.update = function () {
-    RewardService.getFeatured.async().then(function(returnJson) {
-      $scope.featured = returnJson;
+    RewardService.getFavorites.async().then(function(returnJson) {
+
+      $scope.featured = $scope.convertJsonToFeatured(returnJson);
     });
   }
+  $scope.convertJsonToFeatured = function(returnJson)
+  {
+    var featured = {}
+    featured.products = new Array();
+    for(var json in returnJson)
+    {
+      var object = {};
+      object = returnJson[json].favorites;
 
-  $scope.update();
+      featured.products = featured.products.concat(object);
+    }
+    return featured;
+  }
 
   $scope.findProduct = function(productId)
   {
@@ -61,13 +71,12 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
       }
     }
   }
-  $scope.open = function () {
-    var params = {};
-    qs(params);
-    $scope.modalProduct = $scope.findProduct(params.pid);
+  $scope.openModal = function () {
+    var productId = event.currentTarget.className;
+    $scope.modalProduct = $scope.findProduct(productId);
     $scope.productModal = true;
   };
-  $scope.close = function () {
+  $scope.closeModal = function () {
     $scope.productModal = false;
   };
   $scope.photoOpts = {
@@ -75,38 +84,6 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
     dialogFade:true
   };
 
-  $scope.openModal = function(newModal)
-  {
-    for(var modal in $scope.modal)
-    {
-      if(newModal.modal == modal)
-      {
-        $scope.modal[modal].active = true;
-      }
-      else
-      {
-        $scope.modal[modal].active = false;
-      }
-    }
-  }
-  $scope.closeModal = function()
-  {
-    for(var modal in $scope.modal)
-    {
-      $scope.modal[modal].active = false;
-    }
-  }
+  $scope.update();
 }
 
-function qs(params) {
-  var query = window.location.search.substring(1);
-  var parms = query.split('&');
-  for (var i=0; i<parms.length; i++) {
-    var pos = parms[i].indexOf('=');
-    if (pos > 0) {
-      var key = parms[i].substring(0,pos);
-      var val = parms[i].substring(pos+1);
-      params[key] = val;
-    }
-  }
-}

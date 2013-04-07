@@ -221,6 +221,10 @@ body:before {
     margin: 0 0.75rem;
 }
 
+.user-admin li a{
+    color: #333333;
+}
+
 /* Navigation
 ------------------------------------------------------------ */
 .site-nav {
