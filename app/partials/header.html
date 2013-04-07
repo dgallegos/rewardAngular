@@ -29,5 +29,12 @@
 
     </section>
     <!-- End .header-right -->
-
+<script>
+  $(window).load(function(){
+    if(sessionStorage.user){
+    $('.user-admin li:eq(0)').text(sessionStorage.user);
+    $('.user-admin li:eq(1)').remove();
+    }
+  })
+</script>
 </header>
