@@ -29,5 +29,10 @@
 <script>
 $(window).load(function(){
   setTimeout(function(){$('.container').isotope('reLayout');},1500);
+  
+  $(window).resize(function() {
+    $('.container').isotope('shuffle');
+  });
+
 })
 </script>
