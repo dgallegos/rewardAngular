@@ -3,50 +3,40 @@
 /* Directives */
 
 
-var app = angular.module('rsDirectives', [])
+var app = angular.module('rsDirectives', ['ui.bootstrap'])
 
-app.directive('isoRepeat', function () {
+app.directive('isoRepeat', function ($timeout) {
     return {
         scope: {
-            items: '=isoRepeat'
+            products: '=isoRepeat',
+            innerFoo: '&click'
         },
+        template:'<div>' +
+        '<article ng-repeat="product in products">' +
+        '<a href="#?pid={{product.product_id}}" ng-click="innerFoo()">'+
+        '<img src={{product.product_image}}>' +
+        '</a>' +
+        '</article></div>',
         link: function (scope, element, attrs) {
 
             var options = {
                 animationEngine : 'jquery',
                 itemSelector: 'article',
                 layoutMode: 'fitRows',
-                getSortData : {
-                    title: function(e) {
-                        return e.find('h2').text();
-                    }
-                },
-                sortBy: 'title',
                 sortAscending: true
             };
 
-            var init = function() {
-                element.isotope(options);
-            };
+            element.isotope(options);
 
-            var setup = function () {
-
-                var articles = '';
-                scope.items.forEach(function (product) {
-                    articles +=
-                        '<article id="' + product.product_id + '">' +
-                            '<img src=' + product.product_image + '>' +
-                        '</article>';
-                });
-
-                element.isotope('remove', element.find('article'));
-                element.isotope('insert', $(articles));
-            };
-
-            scope.$watch('items', function (newValue, oldValue) {
-                if (newValue.length == 0) init();
-                if (newValue.length > 0) setup();
+            scope.$watch('products', function(newVal, oldVal){
+               $timeout(function(){
+                    element.isotope( 'reloadItems' ).isotope({ sortBy: 'original-order' });
+               });
+            },true);
+            element.parent().bind('mouseenter', function() {
+                element.show();
             });
+
         }
     };
 });

@@ -3,7 +3,17 @@
 		<img src="{{product.product_image}}">
 	</div>
 </div -->
-
-<div id="items" ng-controller="FeaturedCtrl">
-    <section class="container" data-iso-repeat="featured.products"></section>
+<div ng-controller="FeaturedCtrl">
+    <div modal="productModal" close="close()" options="opts">
+        <div class="modal-header">
+            <h4>{{modalProduct.product_name}}</h4>
+        </div>
+        <div class="modal-body">
+           {{modalProduct.price}}
+        </div>
+    </div>
+  <div id="items">
+    <section class="container" data-iso-repeat="featured.products" click="open()"></section>
+  </div>
 </div>
+
