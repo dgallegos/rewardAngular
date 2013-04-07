@@ -1,14 +1,8 @@
 <script src='https://cdn.firebase.com/v0/firebase.js'></script>
 <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-<h1>Register</h1>
-    <input type='text' id='nameInput' placeholder='email'>
-    <input type='text' id='messageInput' placeholder='password'>
-    <button id="submit">Register</button>
-    <br>
-    <br>
-    <ul id="users">
-    </ul>
+<h3>Successfully logged out...re-directing</h3>
+
 <script>
 // var myDataRef = new Firebase('https://rewardrobe.firebaseio.com/');
 // var bloggerArray = [];
@@ -43,21 +37,13 @@ var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
   }
 });
 
+authClient.logout();
+window.location = "/";
 
 
 
 
-$('#submit').click(function(){
- var nameVar = $('#nameInput').val();
- var tokenVar = $('#messageInput').val();
 
- authClient.createUser(nameVar, tokenVar, function(error, user) {
-  if (!error) {
-    console.log('User Id: ' + user.id + ', Email: ' + user.email);
-  }
-});
-
-})
 
 
 </script>
