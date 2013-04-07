@@ -24,8 +24,20 @@
 /* Imports
 ------------------------------------------------------------ */
  @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
- @import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
  @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
+@font-face {
+  font-family: 'entypo-social';
+  src: url('../lib/fonts/entypo-social.eot');
+  src: url('../lib/fonts/entypo-social.eot?#iefix') format('embedded-opentype'),
+       url('../lib/fonts/entypo-social.woff') format('woff'),
+       url('../lib/fonts/entypo-social.ttf') format('truetype'),
+       url('../lib/fonts/entypo-social.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 
 /* Resets
 ------------------------------------------------------------ */
@@ -168,7 +180,7 @@ body:before {
 ------------------------------------------------------------ */
 .site-header {
     background: #fff;
-    border-top: 2px solid #289860;
+    border-top: 2px solid #0F714B;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
     height: 100px;
     position: relative;
@@ -176,7 +188,7 @@ body:before {
 }
 
 .logo {
-    background: #289860;
+    background: #0F714B;
     float: left;
     height: 98px;
     width: 140px;
@@ -292,13 +304,23 @@ body:before {
 
 .footer-widget-2 {
     float: left;
-    width: 300px;
+    width: 185px;
     margin: 0 40px;
 }
 
 .footer-widget-3 {
     float: left;
-    width: 300px;
+    width: 185px;
+    margin: 0 40px 0 0;
+}
+
+.footer-widget-4 {
+    width: 185px;
+    float: left;
+}
+
+.footer-widget-4 a {
+    text-decoration: none;
 }
 
 .footer-widgets {
@@ -313,7 +335,16 @@ body:before {
     font-family: 'Droid Serif', serif;
     font-size: 1.15rem;
     padding: 0 0 0.75rem;
-    margin: 0 0 1.2rem;
+    margin: 0 0 0.8rem;
+}
+
+.footer-widget-4 h3 {
+    margin: 0;
+}
+
+.footer-widgets .widget li {
+    list-style: none;
+    margin: 0 0 0.45rem;
 }
 
 .footer-creds {
@@ -387,10 +418,42 @@ ul.social li.rss a:hover {
     opacity: 1;
 }
 
+/* Icons
+------------------------------------------------------------ */
+.icon {
+    color: #888;
+    font-family: 'entypo-social';
+    font-size: 60px;
+    transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.icon.facebook:hover {
+    color: blue;
+}
+
+.icon.twitter:hover {
+    color: lightBlue;
+}
+
+.icon.pinterest:hover {
+    color: red;
+}
+
+.icon.tumblr:hover {
+    color: blue;
+}
+
 /* Isotope
 ------------------------------------------------------------ */
 #container {
     clear: both;
+}
+
+.container {
+    margin-bottom: 3rem;
 }
 
 ul#filters {
@@ -428,8 +491,8 @@ ul#filters li a:hover {
 
 .isotope-item {
     border: 1px solid #eaeaea;
-    margin: 5px;
-    padding: 5px;
+    margin: 10px;
+    padding: 10px;
     z-index: 2;
 }
 
