@@ -122,6 +122,9 @@ app.get('/login', function (request, response) {
     response.render('login');
 })
 
+app.get('/landing', function(request, response){
+    response.render('landing');
+})
 
 app.post('/basicauth', function (request, response) {
     // var userName = request.query['user'];
