@@ -178,7 +178,7 @@ body:before {
 .logo {
     background: #289860;
     float: left;
-    height: 100px;
+    height: 98px;
     width: 140px;
 }
 
@@ -238,9 +238,10 @@ body:before {
 .breadcrumbs {
     background: #f4f4f4;
     border-bottom: 1px solid #eaeaea;
-    height: 45px;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    height: 45px;
+    margin: 0 0 2rem;
     padding: 15px;
 }
 
@@ -257,6 +258,8 @@ body:before {
     border-top: 1px solid #eaeaea;
     clear: both;
     height: 250px;
+    font-family: 'Lato';
+    font-weight: 300;
     margin-top: -250px;
     position: relative;
 }
@@ -268,10 +271,10 @@ body:before {
 
 .footer-widget-1 input[type=email] {
     width: 100%;
-    border: 1px solid #eaeaea;
+    border: 1px solid #ddd;
     border-radius: 3px;
     padding: 10px;
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.02);
+    box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.02);
     float:left;
 }
 
@@ -309,7 +312,8 @@ body:before {
     color: #555;
     font-family: 'Droid Serif', serif;
     font-size: 1.15rem;
-    margin: 0 0 1.5rem;
+    padding: 0 0 0.75rem;
+    margin: 0 0 1.2rem;
 }
 
 .footer-creds {
@@ -317,6 +321,15 @@ body:before {
     background: #333;
     color: #fff;
     height: 35px;
+}
+
+.copyright {
+    color: rgba(255,255,255,0.25);
+    float: left;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    padding-top: 11px;
+    width: 50%;
 }
 
 /* Share Links
@@ -376,24 +389,8 @@ ul.social li.rss a:hover {
 
 /* Isotope
 ------------------------------------------------------------ */
-#container img {
-    padding: 3px;
-    border: 1px solid #eaeaea;
-}
-
-.portfolio {
-    margin: 32px 0 0;
-    margin: 2rem 0 2.5rem;
-}
-
 #container {
     clear: both;
-}
-
-.portfolio-filters {
-    margin: 32px 0 0;
-    margin: 2rem 0 0;
-    text-align: center;
 }
 
 ul#filters {
@@ -430,6 +427,9 @@ ul#filters li a:hover {
 }
 
 .isotope-item {
+    border: 1px solid #eaeaea;
+    margin: 5px;
+    padding: 5px;
     z-index: 2;
 }
 
