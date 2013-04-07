@@ -1,0 +1,10 @@
+<div ng-controller="PublishersCtrl">
+  <div ng-repeat="publisher in publishers">
+    {{publisher.name}} <br />
+    {{publisher.blog}} <br />
+    {{publisher.name}} <br />
+      <form ng-submit="removePublisher()">
+        <input class="btn-primary" type="submit" value="{{publisher.token}}">
+      </form>
+  </div>
+</div>
