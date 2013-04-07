@@ -61,7 +61,6 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
       return featured;
     }
   }
-  $scope.update();
 
   $scope.findProduct = function(productId)
   {
@@ -73,7 +72,7 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
       }
     }
   }
-  $scope.open = function (fuck) {
+  $scope.open = function () {
     var productId = event.currentTarget.className;
     $scope.modalProduct = $scope.findProduct(productId);
     $scope.productModal = true;
@@ -86,27 +85,8 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
     dialogFade:true
   };
 
-  $scope.openModal = function(newModal)
-  {
-    for(var modal in $scope.modal)
-    {
-      if(newModal.modal == modal)
-      {
-        $scope.modal[modal].active = true;
-      }
-      else
-      {
-        $scope.modal[modal].active = false;
-      }
-    }
-  }
-  $scope.closeModal = function()
-  {
-    for(var modal in $scope.modal)
-    {
-      $scope.modal[modal].active = false;
-    }
-  }
+
+  $scope.update();
 }
 
 function qs(params) {
