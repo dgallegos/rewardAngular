@@ -169,7 +169,7 @@ body:before {
 
 #main {
     overflow: auto;
-    padding-bottom: 250px;
+    padding-bottom: 300px;
 }
 
 .wrap {
@@ -272,16 +272,34 @@ body:before {
     text-decoration: none;
 }
 
+/* Content
+------------------------------------------------------------ */
+.content {
+    width: 720px;
+    float: left;
+}
+
+.content img {
+    max-width: 680px;
+}
+
+/* Sidebar
+------------------------------------------------------------ */
+.sidebar {
+    width: 260px;
+    float: right;
+}
+
 /* Footer
 ------------------------------------------------------------ */
 .site-footer {
     background: #f4f4f4;
     border-top: 1px solid #eaeaea;
     clear: both;
-    height: 250px;
+    height: 300px;
     font-family: 'Lato';
     font-weight: 300;
-    margin-top: -250px;
+    margin-top: -300px;
     position: relative;
 }
 
@@ -337,9 +355,9 @@ body:before {
 }
 
 .footer-widgets {
-    height: 175px;
+    height: 225px;
     margin-top: 40px;
-    max-height: 175px;
+    max-height: 225px;
 }
 
 .footer-widgets h3 {
@@ -417,6 +435,9 @@ body:before {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     color: #fff;
+    font-size: 1.1rem;
+    font-family: 'Droid Serif', serif;
+    padding: 20px;
 }
 
 .modal-body img {
@@ -437,6 +458,10 @@ body:before {
 
 .container {
     margin-bottom: 3rem;
+}
+
+.container img {
+    max-width: 680px;
 }
 
 ul#filters {
