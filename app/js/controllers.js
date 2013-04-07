@@ -73,10 +73,9 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
       }
     }
   }
-  $scope.open = function () {
-    var params = {};
-    qs(params);
-    $scope.modalProduct = $scope.findProduct(params.pid);
+  $scope.open = function (fuck) {
+    var productId = event.currentTarget.className;
+    $scope.modalProduct = $scope.findProduct(productId);
     $scope.productModal = true;
   };
   $scope.close = function () {
