@@ -23,7 +23,7 @@
   <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
 
 </head>
-<body ng-controller="RewardCtrl"  class="page index-page">
+<body ng-controller="RewardCtrl"  class="page login-page">
 
   <div id="page">
 
@@ -47,21 +47,21 @@
         <section class="content">
 
       <!-- Begin Login Form -->
+      <div class="login-form">
+
+        <h3 class="login-header">Login</h3>
+
         <form method="post" id="form_login" action="/basicauth" class="login-form">
           <input type="text" placeholder="Username" id="username">
           <input type="password" placeholder="Password" id="password">
           <input type="submit" value="Submit">
         </form>
+      </div>
       <!-- End Login Form -->
 
-      <a href="">Forgot Password?</a> | <a href="/auth/twitter">Authenticate</a>
+      <a href="" class="forgot" style="display:none;">Forgot Password?</a>
 
         </section>
-
-
-        <!-- Include Sidebar -->
-        <div ng-include src="'/partials/sidebar.html'"></div>
-        <!-- End Include Sidebar -->
 
       </div>
       <!-- End Featured -->

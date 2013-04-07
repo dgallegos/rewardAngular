@@ -788,5 +788,83 @@ h3.home-header {
     font-size: 1.5rem;
 }
 
+/* Login Form
+------------------------------------------------------------- */
+.login-page .content {
+    width: 100%;
+}
 
+h3.login-header {
+    font-family: 'Droid Serif', serif;
+    font-size: 1.3rem;
+    margin: 1rem 0 1rem 9rem;
+}
+
+.login-form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#form_login input[type=text],
+#form_login input[type=password] {
+    width: 100%;
+    padding: 10px !important;
+    border: 1px solid #eaeaea;
+    margin: 0 0 1rem;
+    box-shadow: none;
+    border-radius: 4px;
+    color: #333;
+    height: auto;
+    font-size: 1rem;
+}
+
+#form_login input[type=submit] {
+    background-color: #40B88B;
+    border: none;
+    bottom: 100px;
+    color: #fff;
+    cursor: pointer;
+    display: -moz-inline-stack;
+    display: inline-block;
+    font-family: "lato";
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    vertical-align: middle; 
+    white-space: nowrap;
+    float: right;
+    width: 100px;
+    zoom: 1;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 0 0 #149061;
+    -moz-box-shadow: 0 3px 0 0 #149061;
+    box-shadow: 0 3px 0 0 #149061;
+    transition: none;
+    -o-transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+}
+
+#form_login input[type=submit]:active{
+    margin-bottom: -2px;
+    -webkit-box-shadow: 0 1px 0 0 #149061;
+    -moz-box-shadow: 0 1px 0 0 #149061;
+    box-shadow: 0 1px 0 0 #149061;
+}
+
+#form_login input[type=submit]:hover {
+    background-color: rgba(64,184,139,0.85);
+}
+
+.forgot {
+    text-align: center;
+}
 
