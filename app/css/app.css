@@ -287,17 +287,55 @@ body:before {
     float: left;
 }
 
+.sidebar a {
+    color: #40B88B;
+    transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear
+}
+
+.sidebar a:hover {
+    color: #0F714B;
+    text-decoration: none;
+}
+
 .sidebar-widget {
     margin: 0 0 1.5rem;
+}
+
+.sidebar-widget img {
+    max-height: 175px;
+}
+
+.sidebar-widget p {
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.sidebar-widget:nth-child(3) {
+    text-align: center;
 }
 
 .sidebar-widget h3 {
     font-family: 'Droid Serif', serif;
     font-size: 1rem;
-    color: #777;
+    color: #333;
     border-bottom: 1px solid #eaeaea;
     padding: 0;
+    text-align: left;
     margin: 0 0 0.75rem;
+}
+
+.sidebar-widget ul {
+    margin: 0;
+}
+
+.sidebar-widget li {
+    list-style: none;
+    margin: 0 0 0.25rem;
+    font-size: 0.85rem;
+    color: #777;
 }
 
 /* Footer
@@ -478,10 +516,10 @@ body:before {
     width: 100%;
 }
 
-
 .product-add a {
     background-color: #40B88B;
     border: none;
+    bottom: 100px;
     color: #fff;
     cursor: pointer;
     display: -moz-inline-stack;
@@ -489,11 +527,10 @@ body:before {
     font-family: "lato";
     font-size: 18px;
     font-weight: 100;
+    left: 57.5%;
     line-height: 1;
     padding: 10px;
     position: absolute;
-    bottom: 50px;
-    left: 57.5%;
     text-align: center;
     text-decoration: none;
     text-shadow: 0 1px 0 rgba(0,0,0,0.15);
@@ -524,6 +561,54 @@ body:before {
 
 .product-add a:hover {
     background-color: rgba(64,184,139,0.85);
+}
+
+
+.product-follow a {
+    background-color: rgba(64,184,139,0.65);
+    border: none;
+    bottom: 50px;
+    color: #fff;
+    cursor: pointer;
+    display: -moz-inline-stack;
+    display: inline-block;
+    font-family: "lato";
+    font-size: 18px;
+    font-weight: 100;
+    left: 57.5%;
+    line-height: 1;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    vertical-align: middle; 
+    white-space: nowrap;
+    width: 180px;
+    zoom: 1;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 0 0 rgba(20,144,97,0.75);
+    -moz-box-shadow: 0 3px 0 0 rgba(20,144,97,0.75);
+    box-shadow: 0 3px 0 0 rgba(20,144,97,0.75);
+    transition: none;
+    -o-transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+}
+
+.product-follow a:active{
+    margin-bottom: -2px;
+    -webkit-box-shadow: 0 1px 0 0 rgba(20,144,97,0.75);
+    -moz-box-shadow: 0 1px 0 0 rgba(20,144,97,0.75);
+    box-shadow: 0 1px 0 0 rgba(20,144,97,0.75);
+}
+
+.product-follow a:hover {
+    background-color: rgba(64,184,139,0.45);
 }
 
 
