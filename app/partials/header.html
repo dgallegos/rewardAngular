@@ -30,8 +30,8 @@
     </section>
     <!-- End .header-right -->
 <script>
-  $(window).load(function(){
-    if(sessionStorage.user){
+  $(document).ready(function(){
+    if(sessionStorage.user != 'undefined'){
     $('.user-admin li:eq(0)').text(sessionStorage.user);
     $('.user-admin li:eq(1)').html('<a href="/logout">Logout</a>');
     }
