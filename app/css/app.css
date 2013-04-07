@@ -37,8 +37,6 @@
   font-style: normal;
 }
 
-
-
 /* Resets
 ------------------------------------------------------------ */
 html, body, div, span, object, iframe,
@@ -249,10 +247,13 @@ body:before {
 }
 
 .site-nav li a {
-    color: #999;
+    color: #555;
     text-decoration: none;
 }
 
+.site-nav li a:hover {
+    color: #0F714B;
+}
 
 /* Breadcrumbs
 ------------------------------------------------------------ */
