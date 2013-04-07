@@ -66,8 +66,11 @@ var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
     alert('error');
   } else if (user) {
     // user authenticated with Firebase
-    alert('User ID: ' + user.id + ', Provider: ' + user.provider);
-    document.cookie.name = user.email;
+    $('#form_login').hide();
+    alert('Successfully authenticated');
+    sessionStorage.user = user.email;
+    window.location = "/";
+
 
   } else {
     // user is logged out
@@ -75,6 +78,7 @@ var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
 });
 
   $(document).ready(function() {
+
     $("#form_login").submit(function(event) {
         event.preventDefault(); // <-- add this
         

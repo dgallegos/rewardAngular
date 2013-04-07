@@ -1,0 +1,63 @@
+<script src='https://cdn.firebase.com/v0/firebase.js'></script>
+<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+<h1>Register</h1>
+    <input type='text' id='nameInput' placeholder='email'>
+    <input type='text' id='messageInput' placeholder='password'>
+    <button id="submit">Register</button>
+    <br>
+    <br>
+    <ul id="users">
+    </ul>
+<script>
+// var myDataRef = new Firebase('https://rewardrobe.firebaseio.com/');
+// var bloggerArray = [];
+
+// myDataRef.on('value', function(snapshot) {
+//   var users = snapshot.val();
+//     for (i=0;i<users.length;i++){
+//         $('#users').append('<li>'+users[i].name+'</li>')
+//     }
+// });
+
+// $('#submit').click(function(){
+// 	var nameVar = $('#nameInput').val();
+// 	var tokenVar = $('#messageInput').val();
+
+// 	bloggerArray.push({name: nameVar, token: tokenVar});
+// 	myDataRef.set(bloggerArray);
+//     location.reload(forceGet);
+
+// })
+
+var chatRef = new Firebase('https://rewardrobe.firebaseIO.com');
+var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
+  if (error) {
+    // an error occurred while attempting login
+    alert('error');
+  } else if (user) {
+    // user authenticated with Firebase
+    alert('User ID: ' + user.id + ', Provider: ' + user.provider);
+  } else {
+    // user is logged out
+  }
+});
+
+
+
+
+
+$('#submit').click(function(){
+ var nameVar = $('#nameInput').val();
+ var tokenVar = $('#messageInput').val();
+
+ authClient.createUser(nameVar, tokenVar, function(error, user) {
+  if (!error) {
+    console.log('User Id: ' + user.id + ', Email: ' + user.email);
+  }
+});
+
+})
+
+
+</script>

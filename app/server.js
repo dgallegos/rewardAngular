@@ -83,6 +83,11 @@ app.get('/create', function(request, response){
     response.render('create');
 });
 
+app.get('/logout', function(request, response){
+    response.render('logout');
+});
+
+
 app.post('/basicauth', function(request, response){
     // var userName = request.query['user'];
     // var userPassword = request.query['pass'];
