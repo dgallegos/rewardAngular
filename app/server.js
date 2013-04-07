@@ -102,6 +102,10 @@ app.get('/logout', function (request, response) {
     response.render('logout');
 });
 
+app.get('/feed', function(request, response){
+    response.render('feed');
+})
+
 app.get('/index', function (request, response) {
     response.render('index', {
         locals: {
@@ -123,15 +127,12 @@ app.post('/basicauth', function (request, response) {
 // var userEmailVar = request.body.userEmail;
 // var message = JSON.stringify({name: "David Gallegos", token: "b90afc2290d9e37d432fa6b4e4dea0d0"});
 
-// client.set("user1", {title:""});
-  // client.lpush("blogger", message, function(err, reply){
-  //   console.log(reply);
-  // });
+// client.set("user1", {title:"gabe", message: "hello" });
 
-  // client.lrange("blogger", 0, -1, function(err, messages){
-  //   var testMessage = JSON.parse(messages)
-  //   console.log(testMessage);
-  // })
+// client.get("user1", function(err, reply){
+// console.log(JSON.parse(reply));
+// });
+
 
 
 
