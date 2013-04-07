@@ -11,6 +11,8 @@ var Firebase = require('firebase');
 var async = require('async');
 var bloggerTokens = require('./modules/bloggertokens');
 
+console.log(typeof bloggerTokens);
+
 
 
 /* Authentication */
@@ -81,10 +83,13 @@ app.configure(function() {
 //     response.render('index.html');
 // })
 
-app.get('/authtest', function(request, response){
-    response.render('index.html');
+app.get('/authenticated', function(request, response){
+    response.redirect('/');
 })
 
+app.get('/admin', function(request, response){
+    response.render('admin');
+});
 
 app.get('/json', function (request, response) {
 
