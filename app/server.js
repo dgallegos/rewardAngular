@@ -1,15 +1,16 @@
 ﻿var express = require('express')
   , passport = require('passport')
   , util = require('util')
-  , TwitterStrategy = require('passport-twitter').Strategy;
+  , DigestStrategy = require('passport-http').DigestStrategy;
 
-var TWITTER_CONSUMER_KEY = "fTxFCJK61JT8YijMDlykjw";
-var TWITTER_CONSUMER_SECRET = "iqbk2wvvsw9iPifpia7mxQvjdM5Ty3Nad7nKJ3sRc8";
+// var TWITTER_CONSUMER_KEY = "fTxFCJK61JT8YijMDlykjw";
+// var TWITTER_CONSUMER_SECRET = "iqbk2wvvsw9iPifpia7mxQvjdM5Ty3Nad7nKJ3sRc8";
 
 var http = require('https');
 var Firebase = require('firebase');
 var async = require('async');
 var bloggerTokens = require('./modules/bloggertokens');
+
 
 
 
@@ -24,31 +25,19 @@ passport.deserializeUser(function(obj, done) {
 });
 
 
-// Use the TwitterStrategy within Passport.
-//   Strategies in passport require a `verify` function, which accept
-//   credentials (in this case, a token, tokenSecret, and Twitter profile), and
-//   invoke a callback with a user object.
-passport.use(new TwitterStrategy({
-    consumerKey: TWITTER_CONSUMER_KEY,
-    consumerSecret: TWITTER_CONSUMER_SECRET,
-    callbackURL: "http://rewardrobe.jit.su/authenticated"
-  },
-  function(token, tokenSecret, profile, done) {
-    // asynchronous verification, for effect...
-    process.nextTick(function () {
-      
-      // To keep the example simple, the user's Twitter profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the Twitter account with a user record in your database,
-      // and return that user instead.
-      return done(null, profile);
+passport.use(new DigestStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function (err, user) {
+      if (err) { return done(err); }
+      if (!user) { return done(null, false); }
+      if (!user.validPassword(password)) { return done(null, false); }
+      return done(null, user);
     });
   }
 ));
 
 /* End of Authentication */
 
-console.log(typeof bloggerTokens);
 
 var options = {
   host: 'api.rewardstyle.com',
@@ -82,10 +71,25 @@ app.configure(function() {
 //     response.render('index.html');
 // })
 
-app.get('/authtest', function(request, response){
-    response.render('index.html');
+app.get('/authenticated', function(request, response){
+    response.redirect('/');
 })
 
+app.get('/admin', function(request, response){
+    response.render('admin');
+});
+
+app.get('/create', function(request, response){
+    response.render('create');
+});
+
+app.post('/basicauth', function(request, response){
+    // var userName = request.query['user'];
+    // var userPassword = request.query['pass'];
+    var userName = request.body.user;
+    var userPassword = request.body.password;
+    console.log(userPassword);
+})
 
 app.get('/json', function (request, response) {
 

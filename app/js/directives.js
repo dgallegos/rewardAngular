@@ -22,7 +22,13 @@ app.directive('isoRepeat', function ($timeout) {
             var options = {
                 animationEngine : 'jquery',
                 itemSelector: 'article',
-                layoutMode: 'fitRows',
+                layoutMode: 'masonry',
+                getSortData : {
+                    title: function(e) {
+                        return e.find('h2').text();
+                    }
+                },
+                sortBy: 'title',
                 sortAscending: true
             };
 

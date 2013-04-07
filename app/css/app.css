@@ -24,8 +24,20 @@
 /* Imports
 ------------------------------------------------------------ */
  @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
- @import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
  @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
+@font-face {
+  font-family: 'entypo-social';
+  src: url('../lib/fonts/entypo-social.eot');
+  src: url('../lib/fonts/entypo-social.eot?#iefix') format('embedded-opentype'),
+       url('../lib/fonts/entypo-social.woff') format('woff'),
+       url('../lib/fonts/entypo-social.ttf') format('truetype'),
+       url('../lib/fonts/entypo-social.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 
 /* Resets
 ------------------------------------------------------------ */
@@ -168,7 +180,7 @@ body:before {
 ------------------------------------------------------------ */
 .site-header {
     background: #fff;
-    border-top: 2px solid #289860;
+    border-top: 2px solid #0F714B;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
     height: 100px;
     position: relative;
@@ -176,9 +188,9 @@ body:before {
 }
 
 .logo {
-    background: #289860;
+    background: #0F714B;
     float: left;
-    height: 100px;
+    height: 98px;
     width: 140px;
 }
 
@@ -238,9 +250,10 @@ body:before {
 .breadcrumbs {
     background: #f4f4f4;
     border-bottom: 1px solid #eaeaea;
-    height: 45px;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    height: 45px;
+    margin: 0 0 2rem;
     padding: 15px;
 }
 
@@ -257,6 +270,8 @@ body:before {
     border-top: 1px solid #eaeaea;
     clear: both;
     height: 250px;
+    font-family: 'Lato';
+    font-weight: 300;
     margin-top: -250px;
     position: relative;
 }
@@ -268,10 +283,10 @@ body:before {
 
 .footer-widget-1 input[type=email] {
     width: 100%;
-    border: 1px solid #eaeaea;
+    border: 1px solid #ddd;
     border-radius: 3px;
     padding: 10px;
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.02);
+    box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.02);
     float:left;
 }
 
@@ -289,13 +304,23 @@ body:before {
 
 .footer-widget-2 {
     float: left;
-    width: 300px;
+    width: 185px;
     margin: 0 40px;
 }
 
 .footer-widget-3 {
     float: left;
-    width: 300px;
+    width: 185px;
+    margin: 0 40px 0 0;
+}
+
+.footer-widget-4 {
+    width: 185px;
+    float: left;
+}
+
+.footer-widget-4 a {
+    text-decoration: none;
 }
 
 .footer-widgets {
@@ -309,7 +334,17 @@ body:before {
     color: #555;
     font-family: 'Droid Serif', serif;
     font-size: 1.15rem;
-    margin: 0 0 1.5rem;
+    padding: 0 0 0.75rem;
+    margin: 0 0 0.8rem;
+}
+
+.footer-widget-4 h3 {
+    margin: 0;
+}
+
+.footer-widgets .widget li {
+    list-style: none;
+    margin: 0 0 0.45rem;
 }
 
 .footer-creds {
@@ -317,6 +352,15 @@ body:before {
     background: #333;
     color: #fff;
     height: 35px;
+}
+
+.copyright {
+    color: rgba(255,255,255,0.25);
+    float: left;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    padding-top: 11px;
+    width: 50%;
 }
 
 /* Share Links
@@ -374,26 +418,42 @@ ul.social li.rss a:hover {
     opacity: 1;
 }
 
+/* Icons
+------------------------------------------------------------ */
+.icon {
+    color: #888;
+    font-family: 'entypo-social';
+    font-size: 60px;
+    transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+
+.icon.facebook:hover {
+    color: blue;
+}
+
+.icon.twitter:hover {
+    color: lightBlue;
+}
+
+.icon.pinterest:hover {
+    color: red;
+}
+
+.icon.tumblr:hover {
+    color: blue;
+}
+
 /* Isotope
 ------------------------------------------------------------ */
-#container img {
-    width:275px;
-    height:220px;
-}
-
-.portfolio {
-    margin: 32px 0 0;
-    margin: 2rem 0 2.5rem;
-}
-
 #container {
     clear: both;
 }
 
-.portfolio-filters {
-    margin: 32px 0 0;
-    margin: 2rem 0 0;
-    text-align: center;
+.container {
+    margin-bottom: 3rem;
 }
 
 ul#filters {
@@ -430,6 +490,9 @@ ul#filters li a:hover {
 }
 
 .isotope-item {
+    border: 1px solid #eaeaea;
+    margin: 10px;
+    padding: 10px;
     z-index: 2;
 }
 

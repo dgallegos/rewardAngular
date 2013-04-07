@@ -42,9 +42,10 @@
       <!-- End Breadcrumbs -->
 
       <!-- Begin Login Form -->
-        <form action="" class="login-form">
-          <input type="text" placeholder="Username">
-          <input type="password" placeholder="Password">
+        <form method="post" id="form_login" action="/basicauth" class="login-form">
+          <input type="text" placeholder="Username" id="username">
+          <input type="password" placeholder="Password" id="password">
+          <input type="submit" value="Submit">
         </form>
       <!-- End Login Form -->
 
@@ -55,6 +56,21 @@
 
   </div>
   <!-- End #page -->
+  <script>
+  $(document).ready(function() {
+    $("#form_login").submit(function(event) {
+        event.preventDefault(); // <-- add this
+        
+        // querystring equals "?price=100000,200000" -> exactly what I want !
+        var userName = $('#username').val();
+        var userPassword = $('#password').val();
+
+        // window.location.href = 'basicauth?user='+userName+'&pass='+userPassword+''; // <-- this should work.
+        var posting = $.post( '/basicauth', {user:userName, password:userPassword});
+
+    });
+});
+  </script>
 
 
   <div ng-include src="'/partials/footer.html'"></div>

@@ -1,0 +1,35 @@
+<script src='https://cdn.firebase.com/v0/firebase.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+<h1>Add Bloggers</h1>
+    <input type='text' id='nameInput' placeholder='Name'>
+    <input type='text' id='messageInput' placeholder='token'>
+    <button id="submit">Add Blogger</button>
+    <br>
+    <br>
+    <ul id="users">
+    </ul>
+<script>
+var myDataRef = new Firebase('https://rewardrobe.firebaseio.com/');
+var bloggerArray = [];
+
+myDataRef.on('value', function(snapshot) {
+  var users = snapshot.val();
+    for (i=0;i<users.length;i++){
+        $('#users').append('<li>'+users[i].name+'</li>')
+    }
+});
+
+$('#submit').click(function(){
+	var nameVar = $('#nameInput').val();
+	var tokenVar = $('#messageInput').val();
+
+	bloggerArray.push({name: nameVar, token: tokenVar});
+	myDataRef.set(bloggerArray);
+    location.reload(forceGet);
+
+})
+
+
+
+
+</script>
