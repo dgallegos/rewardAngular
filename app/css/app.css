@@ -261,7 +261,7 @@ body:before {
     border-bottom: 1px solid #eaeaea;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    height: 45px;
+    height: 40px;
     margin: 0 0 2rem;
     padding: 15px;
 }
@@ -450,6 +450,10 @@ body:before {
     padding: 20px;
 }
 
+.modal-body {
+    min-height: 250px;
+}
+
 .modal-body img {
     max-width: 50%;
     height: auto;
@@ -459,6 +463,69 @@ body:before {
     float: right;
     width: 49%;
 }
+
+.product-cat {
+    font-weight: bold;
+}
+
+.product-price,
+.product-designer {
+    margin: 0 0 10px 10px;
+}
+
+.product-add {
+    text-align: center;
+    width: 100%;
+}
+
+
+.product-add a {
+    background-color: #40B88B;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: -moz-inline-stack;
+    display: inline-block;
+    font-family: "lato";
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 1;
+    padding: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 57.5%;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    vertical-align: middle; 
+    white-space: nowrap;
+    width: 180px;
+    zoom: 1;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 0 0 #149061;
+    -moz-box-shadow: 0 3px 0 0 #149061;
+    box-shadow: 0 3px 0 0 #149061;
+    transition: none;
+    -o-transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+}
+
+.product-add a:active{
+    margin-bottom: -2px;
+    -webkit-box-shadow: 0 1px 0 0 #149061;
+    -moz-box-shadow: 0 1px 0 0 #149061;
+    box-shadow: 0 1px 0 0 #149061;
+}
+
+.product-add a:hover {
+    background-color: rgba(64,184,139,0.85);
+}
+
 
 .crop {
     width: 300px;
@@ -475,44 +542,6 @@ body:before {
 .container {
     margin-bottom: 3rem;
     width: 960px;
-}
-
-.container img {
-    max-width: 680px;
-}
-
-
-ul#filters {
-    border: 0;
-    list-style: none;
-    margin: 0;
-}
-
-ul#filters li {
-    display: inline;
-    margin: 0 -1px;
-}
-
-ul#filters li:nth-child(1) {
-    margin: 0 -4px;
-}
-
-ul#filters li a {
-    background: #2d3538;
-    border: 0;
-    color: #fff;
-    font-size: 0.95rem;
-    padding: 8px 16px;
-    padding: 0.6rem 1.1rem;
-    text-decoration: none;
-    transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -webkit-transition: all 0.2s linear;
-}
-
-ul#filters li a:hover {
-    background: #77cc6d;
 }
 
 .isotope-item {
@@ -568,8 +597,8 @@ ul#filters li a:hover {
 }
 
 .isotope-item:hover {
-    transition: all 0.25s linear;
-    -webkit-transition: all 0.25s linear;
+    transition: all 0.35s linear;
+    -webkit-transition: all 0.35s linear;
     width: 320px;
     height: 320px;
     margin: 0;

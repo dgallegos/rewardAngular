@@ -6,19 +6,25 @@
 <div ng-controller="FeaturedCtrl">
     <div modal="productModal" close="closeModal()" options="opts">
         <div class="modal-header">
-            <h4>{{modalProduct.product_name}}</h4>
+            <img src="../images/logo-icon.png" style="float: left;margin:-8px 15px 0 0;"><h4>{{modalProduct.product_name}}</h4>
         </div>
         <div class="modal-body">
            <img src="{{modalProduct.product_image}}">
 
            <div class="product-details">
               <section class="product-price">
-                Price: {{modalProduct.price}}
+                <span class="product-cat">Price:</span> {{modalProduct.price}}
               </section>
 
               <section class="product-designer">
-                Designer: {{modalProduct.designer}}
+                <span class="product-cat">Designer:</span> {{modalProduct.designer}}
               </section>
+
+              <section class="product-add">
+                <a href="#">Add to Wardrobe</a>
+              </section>
+
+
             </div>
         </div>
     </div>
