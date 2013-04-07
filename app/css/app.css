@@ -377,8 +377,8 @@ ul.social li.rss a:hover {
 /* Isotope
 ------------------------------------------------------------ */
 #container img {
-    width:275px;
-    height:220px;
+    padding: 3px;
+    border: 1px solid #eaeaea;
 }
 
 .portfolio {

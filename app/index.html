@@ -17,21 +17,6 @@
   <script src="js/directives.js"></script>
   <script src="js/jquery.isotope.min.js"></script>
 
-    <script>
-        var $container = $('#container');
-        // initialize isotope
-        $container.isotope({
-            layoutMode: 'fitRows',
-        });
-
-        // filter items when filter link is clicked
-        $('#filters a').click(function(){
-            var selector = $(this).attr('data-filter');
-            $container.isotope({ filter: selector });
-            return false;
-        });
-    </script>
-
 </head>
 <body ng-controller="RewardCtrl"  class="page home-page">
 
@@ -53,8 +38,13 @@
         </div>
 
       </section>
+      <!-- End Breadcrumbs -->
 
-      <div ng-include src="'/partials/featured.html'"></div>
+      <!-- Begin Featured -->
+      <div class="wrap">
+        <div ng-include src="'/partials/featured.html'"></div>
+      </div>
+      <!-- End Featured -->
 
     </div>
     <!-- End #main -->
