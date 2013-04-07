@@ -36,7 +36,7 @@ function RewardCtrl($scope,$routeParams,RewardService)
 
 }
 
-function FeaturedCtrl($scope,$routeParams,$route,RewardService)
+function FeaturedCtrl($scope,RewardService)
 {
   $scope.featured = {};
   $scope.featured.products = [];
@@ -57,9 +57,8 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
       object = returnJson[json].favorites;
 
       featured.products = featured.products.concat(object);
-
-      return featured;
     }
+    return featured;
   }
 
   $scope.findProduct = function(productId)
@@ -72,12 +71,12 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
       }
     }
   }
-  $scope.open = function () {
+  $scope.openModal = function () {
     var productId = event.currentTarget.className;
     $scope.modalProduct = $scope.findProduct(productId);
     $scope.productModal = true;
   };
-  $scope.close = function () {
+  $scope.closeModal = function () {
     $scope.productModal = false;
   };
   $scope.photoOpts = {
@@ -85,19 +84,6 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
     dialogFade:true
   };
 
-
   $scope.update();
 }
 
-function qs(params) {
-  var query = window.location.hash.substring(2);
-  var parms = query.split('&');
-  for (var i=0; i<parms.length; i++) {
-    var pos = parms[i].indexOf('=');
-    if (pos > 0) {
-      var key = parms[i].substring(0,pos);
-      var val = parms[i].substring(pos+1);
-      params[key] = val;
-    }
-  }
-}

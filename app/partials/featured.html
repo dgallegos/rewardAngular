@@ -4,7 +4,7 @@
 	</div>
 </div -->
 <div ng-controller="FeaturedCtrl">
-    <div modal="productModal" close="close()" options="opts">
+    <div modal="productModal" close="closeModal()" options="opts">
         <div class="modal-header">
             <h4>{{modalProduct.product_name}}</h4>
         </div>
@@ -14,7 +14,7 @@
         </div>
     </div>
   <div id="items">
-    <section class="container" data-iso-repeat="featured.products" click="open()"></section>
+    <section class="container" data-iso-repeat="featured.products" click="openModal()"></section>
   </div>
 </div>
 
