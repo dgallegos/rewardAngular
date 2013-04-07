@@ -2,4 +2,10 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', ['myApp.filters', 'rewardStyleServices', 'rsDirectives']);
+angular.module('myApp', ['myApp.filters', 'rewardStyleServices', 'rsDirectives'])
+ .config(['$routeProvider', function($routeProvider) {
+      $routeProvider.
+          when('/', {templateUrl: 'partials/featured.html', controller: 'FeaturedCtrl'}).
+          when('/favorites', {templateUrl: 'partials/featured.html', controller: 'FeaturedCtrl'}).
+      otherwise({redirectTo: '/'});
+  }]);

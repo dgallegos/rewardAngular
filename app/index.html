@@ -6,9 +6,8 @@
   <meta name="description" content="Social fashion">
   <meta name="author" content="rewardStyle">
 
-
-  <link rel="stylesheet" href="css/bootstrap.css"/>
   <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-resource.js"></script>
@@ -45,17 +44,7 @@
 
       <!-- Begin Featured -->
       <div class="wrap">
-
-        <section class="content">
-
-          <div ng-include src="'/partials/featured.html'"></div>
-
-        </section>
-
-        <!-- Include Sidebar -->
-        <div ng-include src="'/partials/sidebar.html'"></div>
-        <!-- End Include Sidebar -->
-
+        <div ng-view></div>
       </div>
       <!-- End Featured -->
 

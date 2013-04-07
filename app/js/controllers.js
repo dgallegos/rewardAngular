@@ -36,12 +36,12 @@ function RewardCtrl($scope,$routeParams,RewardService)
 
 }
 
-function FeaturedCtrl($scope,RewardService)
+function FeaturedCtrl($scope,$route,RewardService)
 {
   $scope.featured = {};
   $scope.featured.products = [];
 
-  $scope.update = function () {
+  $scope.updateProducts = function () {
     RewardService.getFavorites.async().then(function(returnJson) {
 
       $scope.featured = $scope.convertJsonToFeatured(returnJson);
@@ -84,6 +84,23 @@ function FeaturedCtrl($scope,RewardService)
     dialogFade:true
   };
 
-  $scope.update();
+  $scope.updateProducts();
 }
 
+
+function PublishersCtrl($scope,RewardrobeService)
+{
+  $scope.publishers = [];
+  $scope.publishers = [{name:"Gabe Marshall",token:"325c1cd5606244517254b720e21258c8",
+                                                          blog:"http://gabemarshal.jit.su"},
+                        {name:"David Gallegos",token:"b90afc2290d9e37d432fa6b4e4dea0d0",
+                                                blog:"http://davidgallegos.net"}];
+
+  $scope.updatePublishers = function () {
+    // Get the publishers from our
+    RewardrobeService.getPublishers.async().then(function(returnJson) {
+      $scope.publishers = returnJson;
+    });
+  }
+
+}
