@@ -276,6 +276,10 @@ body:before {
     position: relative;
 }
 
+.site-footer ul {
+    margin: 0;
+}
+
 .footer-widget-1 {
     float: left;
     width: 300px;
@@ -285,7 +289,7 @@ body:before {
     width: 100%;
     border: 1px solid #ddd;
     border-radius: 3px;
-    padding: 10px;
+    padding: 18px 13px;
     box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.02);
     float:left;
 }
@@ -319,7 +323,7 @@ body:before {
     float: left;
 }
 
-.footer-widget-4 a {
+.footer-widget-4 a:hover {
     text-decoration: none;
 }
 
@@ -334,12 +338,12 @@ body:before {
     color: #555;
     font-family: 'Droid Serif', serif;
     font-size: 1.15rem;
-    padding: 0 0 0.75rem;
+    padding: 0 0 0.25rem;
     margin: 0 0 0.8rem;
 }
 
 .footer-widget-4 h3 {
-    margin: 0;
+    margin: 0 0 1.2rem;
 }
 
 .footer-widgets .widget li {
@@ -363,61 +367,6 @@ body:before {
     width: 50%;
 }
 
-/* Share Links
------------------------------------------------------------- */
-ul.social {
-    margin: 1.25rem auto 0;  
-    float: left;
-    list-style: none;
-}
-
-ul.social li {
-    display: inline;
-    float: left;
-    margin-left: 0.5rem;
-}
-
-ul.social li a {
-    background:url(../images/social-sprite.png);
-    float: left;
-    height: 30px;
-    margin: 0;
-    text-indent: -9999px;
-    width: 30px;
-    opacity: 0.75;
-    transition: none;
-    -o-transition: none;
-    -moz-transition: none;
-    -webkit-transition: none;
-}
-
-ul.social li.facebook a {
-    background-position: 0 0px;
-}
-
-ul.social li.facebook a:hover {
-    background-position: 0 -31px;
-    opacity: 1;
-}
-
-ul.social li.twitter a {
-    background-position: 0 -62px;
-}
-
-ul.social li.twitter a:hover {
-    background-position: 0 -93px;
-    opacity: 1;
-}
-
-ul.social li.rss a {
-    background-position: 0 -124px;
-}
-
-ul.social li.rss a:hover {
-    background-position: 0 -155px;
-    opacity: 1;
-}
-
 /* Icons
 ------------------------------------------------------------ */
 .icon {
@@ -427,6 +376,7 @@ ul.social li.rss a:hover {
     transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
+    text-decoration: none;
     -webkit-transition: all 0.2s linear;
 }
 
@@ -493,6 +443,7 @@ ul#filters li a:hover {
     border: 1px solid #eaeaea;
     margin: 10px;
     padding: 10px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.05);
     z-index: 2;
 }
 
