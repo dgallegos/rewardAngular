@@ -9,6 +9,11 @@
 var http = require('https');
 var Firebase = require('firebase');
 var async = require('async');
+
+var redis = require('redis');
+var client = redis.createClient(6379, "nodejitsudb4215000022.redis.irstack.com");
+client.auth("nodejitsudb4215000022.redis.irstack.com:f327cfe980c971946e80b8e975fbebb4", function() {console.log("RedisDB Connected...");});
+
 var bloggerTokens = require('./modules/bloggertokens');
 
 

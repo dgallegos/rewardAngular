@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+
+  <meta charset="utf-8">
+  <title>rewardrobe - The Lion, The Witch, and rewardrobe.</title>
+  <meta name="description" content="Social fashion">
+  <meta name="author" content="rewardStyle">
+
+  <link rel="stylesheet" href="css/app.css"/>
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
+
+</head>
+<body ng-controller="RewardCtrl"  class="page home-page">
+
+  <div id="page">
+
+    <div id="main">
+
+      <!-- Include Header -->
+      <div ng-include src="'/partials/header.html'"></div>
+      <!-- End Include Header -->
+
+      <!-- Begin Breadcrumbs -->
+      <section class="breadcrumbs">
+
+        <div class="wrap">
+
+          <a href="/rewardrobe/">Home</a> /
+
+        </div>
+
+      </section>
+      <!-- End Breadcrumbs -->
+
+      <!-- Begin Login Form -->
+        <form method="post" id="form_login" action="/basicauth" class="login-form">
+          <input type="text" placeholder="Username" id="username">
+          <input type="password" placeholder="Password" id="password">
+          <input type="submit" value="Submit">
+        </form>
+      <!-- End Login Form -->
+
+      <a href="">Forgot Password?</a> | <a href="/auth/twitter">Authenticate</a>
+
+    </div>
+    <!-- End #main -->
+
+  </div>
+  <!-- End #page -->
+  <script>
+var chatRef = new Firebase('https://rewardrobe.firebaseIO.com');
+var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
+  if (error) {
+    // an error occurred while attempting login
+    alert('Invalid username or password');
+  } else if (user) {
+    // user authenticated with Firebase
+    $('#form_login').hide();
+    localStorage.user = user.email;
+    //window.location = "/";
+    alert('you r logged in');
+
+  } else {
+    // user is logged out
+  }
+});
+
+  $(document).ready(function() {
+
+    $("#form_login").submit(function(event) {
+        event.preventDefault(); // <-- add this
+        
+        // querystring equals "?price=100000,200000" -> exactly what I want !
+        var userName = $('#username').val();
+        var userPassword = $('#password').val();
+
+            authClient.login('password', {
+              email: userName,
+              password: userPassword
+            });
+
+        // window.location.href = 'basicauth?user='+userName+'&pass='+userPassword+''; // <-- this should work.
+        // var posting = $.post( '/basicauth', {user:userName, password:userPassword});
+
+
+    });
+});
+  </script>
+
+
+  <div ng-include src="'/partials/footer.html'"></div>
+
+</body>
+</html>
