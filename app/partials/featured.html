@@ -26,4 +26,8 @@
     <section class="container" data-iso-repeat="featured.products" click="openModal()"></section>
   </div>
 </div>
-
+<script>
+$(window).load(function(){
+  setTimeout(function(){$('.container').isotope('reLayout');},1500);
+})
+</script>

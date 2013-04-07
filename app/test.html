@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>rewardrobe - The Lion, The Witch, and rewardrobe.</title>
+  <meta name="description" content="Social fashion">
+  <meta name="author" content="rewardStyle">
+
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="lib/ui-bootstrap-modal-0.3.0.js"></script>
+
+  <script src="js/jquery.isotope.min.js"></script>
+
+</head>
+<body class="page home-page">
+
+  <div id="page">
+
+    <div id="main">
+
+      <!-- Include Header -->
+<header id="masthead" class="site-header">
+
+  <div class="wrap">
+
+    <div class="logo">
+      <a href="/rewardrobe/">
+        <img src="images/logo.png">
+      </a>
+    </div>
+
+    <section class="header-right">
+
+      <!-- Include Admin Bar -->
+        <section class="user-admin">
+          <ul>
+            <li><a href="/login.html">Login</a></li>
+            <li><a href="/create">Register</a></li>
+          </ul>
+
+          <div class="clear"></div>
+        </section>
+      <!-- End Include Admin Bar -->
+
+    <!-- Include Header -->
+        <nav ng-include src="'/partials/navigation.html'" class="site-nav"></nav>
+      <!-- End Include Header -->
+
+      <div class="clear"></div>
+
+    </section>
+    <!-- End .header-right -->
+<script>
+  $(document).ready(function(){
+    if(localStorage.user != 'undefined'){
+    $('.user-admin li:eq(0)').text(localStorage.user);
+    $('.user-admin li:eq(1)').html('<a href="/logout">Logout</a>');
+    } else {
+        $('.user-admin li:eq(1)').html('<a href="/create">Register</a>');
+    }
+  })
+</script>
+</header>
+      <!-- End Include Header -->
+
+      <!-- Begin Breadcrumbs -->
+      <section class="breadcrumbs">
+
+        <div class="wrap">
+
+          <a href="/rewardrobe/">Featured Items</a>
+
+        </div>
+
+      </section>
+      <!-- End Breadcrumbs -->
+
+      <!-- Begin Featured -->
+      <div class="wrap">
+        <div></div>
+      </div>
+      <!-- End Featured -->
+
+    </div>
+    <!-- End #main -->
+
+  </div>
+  <!-- End #page -->
+
+  <script>
+  $(document).ready(function(){
+    $('article').click(function(){
+      alert();
+    })
+  })
+
+  </script>
+<footer id="colophon" class="site-footer">
+
+  <div class="wrap">
+
+    <!-- Begin Footer Widgets -->
+    <div class="footer-widgets">
+
+      <!-- Begin Footer Widget 1 -->
+        <section class="widget footer-widget-1">
+        
+          <h3>Newsletter</h3>
+
+          <form>
+            <input type="email" placeholder="Your Email Address">
+          </form>
+      
+        </section>
+      <!-- End Footer Widget 1 -->
+
+
+      <!-- Begin Footer Widget 2 -->
+        <section class="widget footer-widget-2">
+
+          <h3>Services</h3>
+
+          <ul>
+            <li>Customer Service</li>
+            <li>Refer-a-friend</li>
+            <li>Wish List</li>
+          </ul>
+
+        </section>
+      <!-- End Footer Widget 2 -->
+
+
+      <!-- Begin Footer Widget 3 -->
+        <section class="widget footer-widget-3">
+
+          <h3>Information</h3>
+
+          <ul>
+            <li>About Us</li>
+            <li>Careers</li>
+            <li>Affiliate Program</li>
+          </ul>
+
+        </section>
+      <!-- End Footer Widget 3 -->
+
+
+      <!-- Begin Footer Widget 4 -->
+        <section class="widget footer-widget-4">
+
+          <h3>Connect</h3>
+
+          <a href="facebook">
+            <span class="icon facebook">&#62221;</span>
+          </a>
+
+          <a href="twitter">
+            <span class="icon twitter">&#62218;</span>
+          </a>
+
+          <a href="pinterest">
+            <span class="icon pinterest">&#62227;</span>
+          </a>
+
+          <a href="tumblr">
+            <span class="icon tumblr">&#62230;</span>
+          </a>
+
+        </section>
+      <!-- End Footer Widget 4 -->
+
+    </div>
+    <!-- End .wrap -->
+
+  </div>
+  <!-- End Footer Widgets -->
+
+  <!-- Begin Footer Creds -->
+    <section class="footer-creds">
+
+      <div class="wrap">
+
+        <div class="copyright">
+          &copy; 2013 DJBG. All Rights Reserved.
+        </div>
+
+        <div class="share-links">
+        </div>
+
+      </div>
+
+    </section>
+  <!-- End Footer Creds -->
+
+</footer>
+
+</body>
+</html>
