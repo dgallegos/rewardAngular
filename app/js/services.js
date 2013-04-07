@@ -2,6 +2,7 @@
 
 /* Services */
 
+var sessionData = localStorage.user;
 
 // Demonstrate how to register services
 // In this case it is a simple value service.
@@ -13,7 +14,7 @@ app.factory('RewardService', function($http) {
     // Function to get Client JSON
     RewardService.getFavorites = {
       async: function(token) {
-        var controller = 'favorites';
+        var controller = 'favorites?user='+sessionData+'';
         var favoritesRequest = '/'+controller;
 
         // $http returns a promise, which has a then function, which also returns a promise
