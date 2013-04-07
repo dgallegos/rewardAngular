@@ -132,6 +132,11 @@ input, select {
     vertical-align:middle;
 }
 
+::selection {
+    background: #0F714B;
+    color: #fff;
+}
+
 /* Global
 ------------------------------------------------------------ */
 * {
@@ -184,7 +189,7 @@ body:before {
     box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
     height: 100px;
     position: relative;
-    z-index: 9999;
+    z-index: 99;
 }
 
 .logo {
@@ -233,8 +238,8 @@ body:before {
 
 .site-nav ul {
     float: right;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.2rem;
+    font-family: 'Droid Serif', serif;
+    font-size: 1.1rem;
     font-weight: 300;
 }
 
@@ -385,19 +390,43 @@ body:before {
 }
 
 .icon.facebook:hover {
-    color: blue;
+    color: #3b5998;
 }
 
 .icon.twitter:hover {
-    color: lightBlue;
+    color: #00bdf5;
 }
 
 .icon.pinterest:hover {
-    color: red;
+    color: #cc2328;
 }
 
 .icon.tumblr:hover {
-    color: blue;
+    color: #375570;
+}
+
+/* Modal
+------------------------------------------------------------ */
+.modal {
+    top: 10%;
+}
+
+.modal-header {
+    background: #0F714B;
+    border-bottom: 1px solid #1E5540;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #fff;
+}
+
+.modal-body img {
+    max-width: 50%;
+    height: auto;
+}
+
+.product-details {
+    float: right;
+    width: 49%;
 }
 
 /* Isotope
