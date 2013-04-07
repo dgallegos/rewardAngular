@@ -17,6 +17,8 @@
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
 
 </head>
 <body ng-controller="RewardCtrl"  class="page home-page">
@@ -57,6 +59,21 @@
   </div>
   <!-- End #page -->
   <script>
+var chatRef = new Firebase('https://rewardrobe.firebaseIO.com');
+var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
+  if (error) {
+    // an error occurred while attempting login
+    alert('error');
+  } else if (user) {
+    // user authenticated with Firebase
+    alert('User ID: ' + user.id + ', Provider: ' + user.provider);
+    document.cookie.name = user.email;
+
+  } else {
+    // user is logged out
+  }
+});
+
   $(document).ready(function() {
     $("#form_login").submit(function(event) {
         event.preventDefault(); // <-- add this
@@ -65,8 +82,14 @@
         var userName = $('#username').val();
         var userPassword = $('#password').val();
 
+            authClient.login('password', {
+              email: userName,
+              password: userPassword
+            });
+
         // window.location.href = 'basicauth?user='+userName+'&pass='+userPassword+''; // <-- this should work.
-        var posting = $.post( '/basicauth', {user:userName, password:userPassword});
+        // var posting = $.post( '/basicauth', {user:userName, password:userPassword});
+
 
     });
 });
