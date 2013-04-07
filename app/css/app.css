@@ -557,6 +557,25 @@ body:before {
     text-decoration: none;
 }
 
+/* Landing
+------------------------------------------------------------ */
+.landing-page {
+    background:url(../images/door-2.png);
+    background-size: cover;
+}
+
+.landing-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top:-47px;
+    margin-left: -70px;
+}
+
+.landing-logo img {
+    width: 200px;
+    height: auto;
+}
 
 /* Modal
 ------------------------------------------------------------ */
