@@ -83,7 +83,7 @@ app.configure(function () {
 });
 
 // app.get('/', function (request, response){
-//     response.render('index.html');
+//     response.render('index');
 // })
 
 app.get('/authenticated', function (request, response) {

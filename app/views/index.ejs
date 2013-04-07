@@ -19,12 +19,10 @@
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
   <script src="js/jquery.isotope.min.js"></script>
-  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
-  <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
 
 </head>
-<body ng-controller="RewardCtrl"  class="page home-page">
-<h3 style="color:red"><%= errorMessage %></h3>
+<body ng-controller="RewardCtrl"  class="page index-page">
+
   <div id="page">
 
     <div id="main">
@@ -36,11 +34,7 @@
       <!-- Begin Breadcrumbs -->
       <section class="breadcrumbs">
 
-        <div class="wrap">
-
-          <a href="/rewardrobe/">Featured Items</a>
-
-        </div>
+        <div class="wrap"></div>
 
       </section>
       <!-- End Breadcrumbs -->
@@ -50,9 +44,12 @@
 
         <section class="content">
 
-          <div ng-include src="'/partials/featured.html'"></div>
+          <h3 class="home-header">New Arrivals</h3>
+
+          <div ng-view></div>
 
         </section>
+
 
         <!-- Include Sidebar -->
         <div ng-include src="'/partials/sidebar.html'"></div>
@@ -72,17 +69,18 @@
 <script>
 
 $(document).ready(function(){
+
+  alert(localStorage.user);
 var chatRef = new Firebase('https://rewardrobe.firebaseIO.com');
 var authClient = new FirebaseAuthClient(chatRef, function(error, user) {
   if (error) {
     // an error occurred while attempting login
-    alert('Invalid username or password');
+   
   } else if (user) {
     // user authenticated with Firebase
-    $('#form_login').hide();
-    localStorage.user = user.email;
-    //window.location = "/";
-    alert('you r logged in');
+    
+ //   localStorage.user = user.email;
+    
 
   } else {
     // user is logged out

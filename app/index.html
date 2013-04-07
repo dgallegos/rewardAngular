@@ -66,6 +66,10 @@
 
 
   <div ng-include src="'/partials/footer.html'"></div>
-
+<script>
+if(localStorage.user != "undefined"){
+  $('.home-header').text('Following')
+}
+</script>
 </body>
 </html>
