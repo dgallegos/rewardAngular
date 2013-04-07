@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>rewardrobe - The Lion, The Witch, and rewardrobe.</title>
+  <meta name="description" content="Social fashion">
+  <meta name="author" content="rewardStyle">
+
+
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  <script src="lib/ui-bootstrap-modal-0.3.0.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/jquery.isotope.min.js"></script>
+
+</head>
+<body ng-controller="RewardCtrl"  class="page home-page">
+
+  <div id="page">
+
+    <div id="main">
+
+      <!-- Include Header -->
+      <div ng-include src="'/partials/header.html'"></div>
+      <!-- End Include Header -->
+
+      <!-- Begin Breadcrumbs -->
+      <section class="breadcrumbs">
+
+        <div class="wrap"></div>
+
+      </section>
+      <!-- End Breadcrumbs -->
+
+      <!-- Begin Featured -->
+      <div class="wrap">
+
+        <section class="content">
+
+          <div ng-include src="'/partials/articles.html'"></div>
+
+          <div class="paginate">
+  <ul>
+    <li><a href="#">Previous Page</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">Next Page</a></li>
+  </ul>
+</div>
+
+        </section>
+
+
+
+        <!-- Include Sidebar -->
+        <div ng-include src="'/partials/sidebar.html'"></div>
+        <!-- End Include Sidebar -->
+
+      </div>
+      <!-- End Featured -->
+
+    </div>
+    <!-- End #main -->
+
+  </div>
+  <!-- End #page -->
+
+
+  <div ng-include src="'/partials/footer.html'"></div>
+
+</body>
+</html>
