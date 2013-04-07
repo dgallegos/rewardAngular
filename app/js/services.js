@@ -15,7 +15,7 @@ app.factory('RewardService', function($http) {
     RewardService.getFavorites = {
       async: function(token) {
         var controller = 'favorites?user='+sessionData+'';
-        var favoritesRequest = '/'+controller;
+        var favoritesRequest = '/json/'+controller;
 
         // $http returns a promise, which has a then function, which also returns a promise
         var promise = $http.get(favoritesRequest).then(function (response) {
@@ -29,8 +29,8 @@ app.factory('RewardService', function($http) {
 
     RewardService.getFeatured = {
       async: function() {
-        var controller = 'json';
-        var favoritesRequest = '/'+controller;
+        var controller = 'featured';
+        var favoritesRequest = '/json/'+controller;
 
         // $http returns a promise, which has a then function, which also returns a promise
         var promise = $http.get(favoritesRequest).then(function (response) {
@@ -53,7 +53,7 @@ app.factory('RewardrobeService', function($http) {
     RewardrobeService.getPublishers = {
       async: function(token) {
         var controller = 'publishers';
-        var publishersRequest = '/'+controller;
+        var publishersRequest = '/json/'+controller;
 
         // $http returns a promise, which has a then function, which also returns a promise
         var promise = $http.get(publishersRequest).then(function (response) {
