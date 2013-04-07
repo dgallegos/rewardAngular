@@ -26,7 +26,7 @@ function RewardCtrl($scope,$routeParams,RewardService)
 
   $scope.getFavorites = function(token)
   {
-      RewardService.getFavorites.async(token).then(function(returnJson) {
+      RewardService.getFeatured.async(token).then(function(returnJson) {
       // Assign return data to Client Object
       $scope.favorites = returnJson;
     });
@@ -41,14 +41,26 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
   $scope.featured = {};
   $scope.featured.products = [];
 
-  $scope.modalProduct;
-
   $scope.update = function () {
-    RewardService.getFeatured.async().then(function(returnJson) {
-      $scope.featured = returnJson;
+    RewardService.getFavorites.async().then(function(returnJson) {
+
+      $scope.featured = $scope.convertJsonToFeatured(returnJson);
     });
   }
+  $scope.convertJsonToFeatured = function(returnJson)
+  {
+    var featured = {}
+    featured.products = new Array();
+    for(var json in returnJson)
+    {
+      var object = {};
+      object = returnJson[json].favorites;
 
+      featured.products = featured.products.concat(object);
+
+      return featured;
+    }
+  }
   $scope.update();
 
   $scope.findProduct = function(productId)
@@ -99,7 +111,7 @@ function FeaturedCtrl($scope,$routeParams,$route,RewardService)
 }
 
 function qs(params) {
-  var query = window.location.search.substring(1);
+  var query = window.location.hash.substring(2);
   var parms = query.split('&');
   for (var i=0; i<parms.length; i++) {
     var pos = parms[i].indexOf('=');
