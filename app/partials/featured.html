@@ -9,15 +9,23 @@
             <h4>{{modalProduct.product_name}}</h4>
         </div>
         <div class="modal-body">
-           <img src="{{modalProduct.product_image}}">
+           <img src="{{product.product_image}}">
 
            <div class="product-details">
               <section class="product-price">
-                Price: {{modalProduct.price}}
+                <span class="product-bold">Price:</span> {{modalProduct.price}}
               </section>
 
               <section class="product-designer">
-                Designer: {{modalProduct.designer}}
+                <span class="product-bold">Designer:</span> {{modalProduct.designer}}
+              </section>
+
+              <section class="product-add-wardrobe">
+                <a href="#">Add to Wardrobe</a>
+              </section>
+
+              <section class="product-follow-blogger">
+                <a href="#">Follow {{modalProduct.designer}}</a>
               </section>
             </div>
         </div>
