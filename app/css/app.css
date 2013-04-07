@@ -780,3 +780,13 @@ body:before {
     pointer-events: none;
     z-index: 1;
 }
+
+
+h3.home-header {
+    font-family: 'Droid serif', serif;
+    margin-left: 10px;
+    font-size: 1.5rem;
+}
+
+
+
